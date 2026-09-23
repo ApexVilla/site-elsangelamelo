@@ -1,0 +1,16 @@
+# elsangelamelo.com
+# Nada é bloqueado de propósito: CSS, JS e imagens precisam estar acessíveis
+# para o Google renderizar a página como um visitante a vê. Rastreadores de
+# mecanismos de resposta (IA) também são bem-vindos — o conteúdo do site é
+# informativo e feito para ser citado corretamente.
+
+User-agent: *
+Allow: /
+
+# Páginas de redirecionamento não têm conteúdo próprio para indexar.
+# Elas já trazem <meta name="robots" content="noindex">; a linha abaixo evita
+# gasto de rastreio à toa.
+Disallow: /whatsapp/
+Disallow: /instagram/
+
+Sitemap: https://elsangelamelo.com/sitemap.xml

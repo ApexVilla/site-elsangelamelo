@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Agendamento Online | Elsângela Melo — Goiânia</title>
+  <meta name="description" content="Agende sua avaliação de estética facial com a biomédica esteta Elsângela Melo em Goiânia, no Setor Coimbra. Atendimento de segunda a sábado." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://elsangelamelo.com/agendamento" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://elsangelamelo.com/agendamento" />
+  <meta property="og:title" content="Agendamento Online | Elsângela Melo" />
+  <meta property="og:description" content="Agende sua avaliação de estética facial com a biomédica esteta Elsângela Melo em Goiânia, no Setor Coimbra. Atendimento de segunda a sábado." />
+  <meta property="og:image" content="https://elsangelamelo.com/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://elsangelamelo.com/og-image.jpg" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-dark: #0d0b0c;
+      --bg-card: rgba(24, 19, 22, 0.85);
+      --primary: #c08aa5;
+      --primary-light: #ebd6e2;
+      --primary-glow: rgba(192, 138, 165, 0.35);
+      --accent-gold: #d4af37;
+      --text-main: #fcf6f9;
+      --text-sub: #c4b5be;
+      --border-color: rgba(192, 138, 165, 0.22);
+      --border-active: #c08aa5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(192, 138, 165, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(212, 175, 55, 0.08) 0%, transparent 45%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--primary);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .brand-logo img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    header p {
+      font-size: 0.98rem;
+      color: var(--text-sub);
+    }
+
+    .booking-container {
+      width: 100%;
+      max-width: 680px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .step-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--primary-light);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .step-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #0d0b0c;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Step 1: Procedure Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 1rem;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .service-card:hover {
+      border-color: var(--primary);
+      background: rgba(192, 138, 165, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .service-card.selected {
+      border-color: var(--primary);
+      background: linear-gradient(135deg, rgba(192, 138, 165, 0.25), rgba(30, 22, 27, 0.9));
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .service-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .service-desc {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+    }
+
+    /* Form Inputs */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-sub);
+      margin-bottom: 0.5rem;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 0.9rem 1.1rem;
+      background: rgba(13, 11, 12, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 0.85rem;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 10px var(--primary-glow);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 550px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Time slots */
+    .shift-options {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .shift-btn {
+      flex: 1;
+      padding: 0.85rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 0.85rem;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .shift-btn:hover {
+      border-color: var(--primary);
+    }
+
+    .shift-btn.selected {
+      background: var(--primary);
+      color: #0d0b0c;
+      font-weight: 600;
+      border-color: var(--primary);
+    }
+
+    /* Submit Button */
+    .submit-btn {
+      width: 100%;
+      padding: 1.1rem;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      border: none;
+      border-radius: 1rem;
+      color: #ffffff;
+      font-family: 'Jost', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+      margin-top: 2rem;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+    }
+
+    .footer {
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-sub);
+    }
+
+    .footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+  
+    /* Área de toque dos links do rodapé (WCAG 2.5.8). */
+    footer a { display: inline-block; padding-block: .35rem; min-height: 24px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/" class="brand-logo">
+      <img src="/favicon.png" alt="Elsângela Melo — Biomédica Esteta" width="32" height="32" loading="lazy" decoding="async" />
+      Elsângela Melo
+    </a>
+    <h1>Agendamento de Consulta</h1>
+    <p>Selecione o procedimento e o horário ideal para o seu atendimento em Goiânia</p>
+  </header>
+
+  <main class="booking-container">
+    
+    <!-- Step 1: Select Service -->
+    <div class="step-title">
+      <span class="step-number">1</span> Escolha o Procedimento Desejado
+    </div>
+    
+    <div class="services-grid" id="servicesGrid">
+      <div class="service-card selected" data-service="Avaliação Geral">
+        <div class="service-name">Avaliação Geral</div>
+        <div class="service-desc">Consulta de diagnóstico facial personalizada</div>
+      </div>
+      <div class="service-card" data-service="Harmonização Facial">
+        <div class="service-name">Harmonização Facial</div>
+        <div class="service-desc">Contorno mandibular, queixo e malar</div>
+      </div>
+      <div class="service-card" data-service="Botox (Toxina Botulínica)">
+        <div class="service-name">Botox</div>
+        <div class="service-desc">Prevenção e tratamento de rugas</div>
+      </div>
+      <div class="service-card" data-service="Preenchimento Labial">
+        <div class="service-name">Preenchimento Labial</div>
+        <div class="service-desc">Volume e contorno com Ácido Hialurônico</div>
+      </div>
+      <div class="service-card" data-service="Bioestimuladores de Colágeno">
+        <div class="service-name">Bioestimuladores</div>
+        <div class="service-desc">Firmeza e estimulação natural de colágeno</div>
+      </div>
+      <div class="service-card" data-service="Skinbooster & Hidratação">
+        <div class="service-name">Skinbooster</div>
+        <div class="service-desc">Hidratação profunda e viço radiante</div>
+      </div>
+      <div class="service-card" data-service="Peeling & Microagulhamento">
+        <div class="service-name">Peeling / Microagulhamento</div>
+        <div class="service-desc">Renovação celular e textura da pele</div>
+      </div>
+      <div class="service-card" data-service="Limpeza de Pele Profissional">
+        <div class="service-name">Limpeza de Pele</div>
+        <div class="service-desc">Remoção de impurezas e nutrição</div>
+      </div>
+    </div>
+
+    <!-- Step 2: Date & Shift -->
+    <div class="step-title" style="margin-top: 2rem;">
+      <span class="step-number">2</span> Data e Período Preferencial
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="dateInput">Data da Consulta</label>
+        <input type="date" id="dateInput" required />
+      </div>
+      <div class="form-group">
+        <label>Período Preferencial</label>
+        <div class="shift-options">
+          <button type="button" class="shift-btn selected" data-shift="Manhã (09h - 12h)">Manhã</button>
+          <button type="button" class="shift-btn" data-shift="Tarde (14h - 19h)">Tarde</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3: Patient Info -->
+    <div class="step-title" style="margin-top: 1.5rem;">
+      <span class="step-number">3</span> Seus Dados de Contato
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="nameInput">Seu Nome Completo</label>
+        <input type="text" id="nameInput" placeholder="Ex: Maria Silva" required />
+      </div>
+      <div class="form-group">
+        <label for="phoneInput">Seu WhatsApp / Telefone</label>
+        <input type="tel" id="phoneInput" placeholder="(62) 99999-9999" required />
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="button" class="submit-btn" id="btnSubmit">
+      <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      </svg>
+      Confirmar e Enviar via WhatsApp
+    </button>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Elsângela Melo — Biomédica Esteta em Goiânia</p>
+    <p><a href="/contato">Ver todos os canais de contato</a> | <a href="/">Voltar ao site</a></p>
+  </footer>
+
+  <script>
+    // Default date to tomorrow
+    const today = new Date();
+    today.setDate(today.getDate() + 1);
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    document.getElementById('dateInput').value = `${yyyy}-${mm}-${dd}`;
+    document.getElementById('dateInput').min = `${yyyy}-${mm}-${dd}`;
+
+    // Service selection logic
+    let selectedService = "Avaliação Geral";
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+      card.addEventListener('click', () => {
+        serviceCards.forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        selectedService = card.getAttribute('data-service');
+      });
+    });
+
+    // Shift selection logic
+    let selectedShift = "Manhã (09h - 12h)";
+    const shiftBtns = document.querySelectorAll('.shift-btn');
+    shiftBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        shiftBtns.forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedShift = btn.getAttribute('data-shift');
+      });
+    });
+
+    // Submit & open WhatsApp
+    document.getElementById('btnSubmit').addEventListener('click', () => {
+      const name = document.getElementById('nameInput').value.trim();
+      const phone = document.getElementById('phoneInput').value.trim();
+      const rawDate = document.getElementById('dateInput').value;
+
+      if (!name) {
+        alert('Por favor, informe seu nome para o agendamento.');
+        document.getElementById('nameInput').focus();
+        return;
+      }
+
+      // Format date for message (DD/MM/YYYY)
+      let formattedDate = rawDate;
+      if (rawDate) {
+        const parts = rawDate.split('-');
+        if (parts.length === 3) {
+          formattedDate = `${parts[2]}/${parts[1]}/${parts[0]}`;
+        }
+      }
+
+      let message = `Olá Dra. Elsângela! Gostaria de agendar um atendimento:\n\n`;
+      message += `📌 *Procedimento:* ${selectedService}\n`;
+      message += `📅 *Data desejada:* ${formattedDate}\n`;
+      message += `⏰ *Período:* ${selectedShift}\n`;
+      message += `👤 *Nome:* ${name}\n`;
+      if (phone) {
+        message += `📱 *Telefone/WhatsApp:* ${phone}\n`;
+      }
+      message += `\nVim pelo site da clínica (Agendamento Online).`;
+
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/5562982022330?text=${encodedMessage}`;
+
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    });
+  </script>
+</body>
+</html>
