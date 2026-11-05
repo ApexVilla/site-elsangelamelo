@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" width="400" height="520">
+<style>
+  svg{color:#B3567D}
+  .r-guias{stroke:#CAA772;stroke-width:.7;opacity:.5}
+  .r-cabelo{stroke:#2A1D22;stroke-width:.8;stroke-linecap:round;opacity:.38}
+  .r-traco{stroke:#2A1D22;stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round}
+  .r-fino{stroke-width:.7;opacity:.6}
+  .r-area{fill:#B3567D;fill-opacity:.2;stroke:#B3567D;stroke-width:.9}
+  .r-area--forte{fill-opacity:.42}
+  .r-linha{fill:none;stroke:#B3567D;stroke-width:2.1}
+  .r-padrao{opacity:.75}
+  pattern circle{fill:#B3567D}
+</style>
+
+<defs>
+  <pattern id="p-gota" width="13" height="13" patternUnits="userSpaceOnUse"><circle cx="3.5" cy="3.5" r="1.2"/><circle cx="10" cy="10" r=".7"/></pattern>
+  <pattern id="p-fio" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(38)"><path d="M0 0V8" stroke-width=".7" stroke="currentColor"/></pattern>
+  <pattern id="p-micro" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r=".62"/></pattern>
+  <clipPath id="c-rosto"><path d="M200 40C128 40 86 100 82 190C80 250 86 300 104 340C122 382 144 424 172 442C182 447 192 448 200 448C208 448 218 447 228 442C256 424 278 382 296 340C314 300 320 250 318 190C314 100 272 40 200 40Z"/></clipPath>
+</defs>
+
+      <path class="r-area" d="M128 106C170 88 230 88 272 106C282 128 286 152 284 178C232 162 168 162 116 178C114 152 118 128 128 106Z"/>
+      <path class="r-area r-area--forte" d="M186 180C194 177 206 177 214 180L210 224H190Z"/>
+      <path class="r-area" d="M88 222C96 214 106 214 116 218L118 250C108 254 96 252 90 246ZM312 222C304 214 294 214 284 218L282 250C292 254 304 252 310 246Z"/>
+<g class="r-guias" fill="none">
+  <path d="M200 6V514" stroke-dasharray="1 6"/>
+  <path d="M34 78H366M34 196H366M34 318H366M34 448H366"/>
+</g>
+<g class="r-cabelo" fill="none">
+  <path pathLength="1" d="M200 24C112 20 62 88 62 190C62 280 58 356 30 440M200 24C288 20 338 88 338 190C338 280 342 356 370 440"/>
+  <path pathLength="1" d="M200 62C158 72 112 110 90 176M200 62C242 72 288 110 310 176"/>
+</g>
+<g class="r-traco" fill="none">
+  <path class="r-contorno" pathLength="1" d="M200 40C128 40 86 100 82 190C80 250 86 300 104 340C122 382 144 424 172 442C182 447 192 448 200 448C208 448 218 447 228 442C256 424 278 382 296 340C314 300 320 250 318 190C314 100 272 40 200 40Z"/>
+  <path pathLength="1" d="M146 420C150 454 150 482 126 500C106 512 84 516 62 520M254 420C250 454 250 482 274 500C294 512 316 516 338 520"/>
+  <path pathLength="1" d="M118 208C134 190 160 188 182 200M282 208C266 190 240 188 218 200"/>
+  <path pathLength="1" d="M128 240C140 224 162 224 176 242C162 248 142 250 128 240ZM272 240C260 224 238 224 224 242C238 248 258 250 272 240Z"/>
+  <circle cx="152" cy="236" r="7.5"/><circle cx="248" cy="236" r="7.5"/>
+  <path class="r-fino" pathLength="1" d="M132 227C146 215 162 215 174 229M268 227C254 215 238 215 226 229"/>
+  <path class="r-fino" pathLength="1" d="M190 246C190 270 186 292 178 306"/>
+  <path pathLength="1" d="M176 312C172 320 180 327 188 322C194 328 206 328 212 322C220 327 228 320 224 312"/>
+  <path pathLength="1" d="M158 360C172 352 188 344 200 352C212 344 228 352 242 360C226 364 214 366 200 366C186 366 174 364 158 360Z"/>
+  <path pathLength="1" d="M158 360C170 386 230 386 242 360"/>
+</g>
+</svg>

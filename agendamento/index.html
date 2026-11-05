@@ -1,475 +1,135 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Agendamento Online | Elsângela Melo — Goiânia</title>
-  <meta name="description" content="Agende sua avaliação de estética facial com a biomédica esteta Elsângela Melo em Goiânia, no Setor Coimbra. Atendimento de segunda a sábado." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://elsangelamelo.com/agendamento" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://elsangelamelo.com/agendamento" />
-  <meta property="og:title" content="Agendamento Online | Elsângela Melo" />
-  <meta property="og:description" content="Agende sua avaliação de estética facial com a biomédica esteta Elsângela Melo em Goiânia, no Setor Coimbra. Atendimento de segunda a sábado." />
-  <meta property="og:image" content="https://elsangelamelo.com/og-image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="pt_BR" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://elsangelamelo.com/og-image.jpg" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solicitar avaliação | Elsângela Melo</title>
+<meta name="description" content="Solicite uma avaliação de estética facial com Elsângela Melo em Goiânia: escolha o tratamento de interesse e a sua preferência de data e período.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://elsangelamelo.com/agendamento/">
+<meta name="author" content="Elsângela Melo">
+<meta name="theme-color" content="#FDFCFC">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Elsângela Melo — Biomédica Esteta">
+<meta property="og:url" content="https://elsangelamelo.com/agendamento/">
+<meta property="og:title" content="Solicitar avaliação | Elsângela Melo">
+<meta property="og:description" content="Solicite uma avaliação de estética facial com Elsângela Melo em Goiânia: escolha o tratamento de interesse e a sua preferência de data e período.">
+<meta property="og:image" content="https://elsangelamelo.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Elsângela Melo, biomédica esteta em Goiânia">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Solicitar avaliação | Elsângela Melo">
+<meta name="twitter:description" content="Solicite uma avaliação de estética facial com Elsângela Melo em Goiânia: escolha o tratamento de interesse e a sua preferência de data e período.">
+<meta name="twitter:image" content="https://elsangelamelo.com/og-image.jpg">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/bodoni-moda.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 
-  <style>
-    :root {
-      --bg-dark: #0d0b0c;
-      --bg-card: rgba(24, 19, 22, 0.85);
-      --primary: #c08aa5;
-      --primary-light: #ebd6e2;
-      --primary-glow: rgba(192, 138, 165, 0.35);
-      --accent-gold: #d4af37;
-      --text-main: #fcf6f9;
-      --text-sub: #c4b5be;
-      --border-color: rgba(192, 138, 165, 0.22);
-      --border-active: #c08aa5;
-    }
+<link rel="stylesheet" href="/assets/site.09841d72c3.css">
+<script src="/assets/site.613a2c9b9f.js" defer data-lenis="/assets/lenis.80f53e77f1.js"></script>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
 
-    body {
-      font-family: 'Jost', sans-serif;
-      background-color: var(--bg-dark);
-      background-image: 
-        radial-gradient(circle at 15% 15%, rgba(192, 138, 165, 0.15) 0%, transparent 45%),
-        radial-gradient(circle at 85% 85%, rgba(212, 175, 55, 0.08) 0%, transparent 45%);
-      color: var(--text-main);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-      max-width: 600px;
-    }
-
-    .brand-logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      color: var(--primary);
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 1rem;
-    }
-
-    .brand-logo img {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-    }
-
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.4rem;
-      font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 0.5rem;
-      line-height: 1.2;
-    }
-
-    header p {
-      font-size: 0.98rem;
-      color: var(--text-sub);
-    }
-
-    .booking-container {
-      width: 100%;
-      max-width: 680px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 1.5rem;
-      padding: 2rem;
-      backdrop-filter: blur(16px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-      animation: fadeIn 0.6s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .step-title {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--primary-light);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .step-number {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: var(--primary);
-      color: #0d0b0c;
-      font-size: 0.85rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Step 1: Procedure Grid */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 0.9rem;
-      margin-bottom: 2rem;
-    }
-
-    .service-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-color);
-      border-radius: 1rem;
-      padding: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .service-card:hover {
-      border-color: var(--primary);
-      background: rgba(192, 138, 165, 0.1);
-      transform: translateY(-2px);
-    }
-
-    .service-card.selected {
-      border-color: var(--primary);
-      background: linear-gradient(135deg, rgba(192, 138, 165, 0.25), rgba(30, 22, 27, 0.9));
-      box-shadow: 0 0 15px var(--primary-glow);
-    }
-
-    .service-name {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #ffffff;
-    }
-
-    .service-desc {
-      font-size: 0.8rem;
-      color: var(--text-sub);
-    }
-
-    /* Form Inputs */
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    label {
-      display: block;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text-sub);
-      margin-bottom: 0.5rem;
-    }
-
-    input[type="text"],
-    input[type="tel"],
-    input[type="date"],
-    select {
-      width: 100%;
-      padding: 0.9rem 1.1rem;
-      background: rgba(13, 11, 12, 0.6);
-      border: 1px solid var(--border-color);
-      border-radius: 0.85rem;
-      color: #ffffff;
-      font-family: inherit;
-      font-size: 0.95rem;
-      outline: none;
-      transition: all 0.3s ease;
-    }
-
-    input:focus, select:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 10px var(--primary-glow);
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    @media (max-width: 550px) {
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Time slots */
-    .shift-options {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .shift-btn {
-      flex: 1;
-      padding: 0.85rem;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-color);
-      border-radius: 0.85rem;
-      color: var(--text-main);
-      font-family: inherit;
-      font-size: 0.9rem;
-      cursor: pointer;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .shift-btn:hover {
-      border-color: var(--primary);
-    }
-
-    .shift-btn.selected {
-      background: var(--primary);
-      color: #0d0b0c;
-      font-weight: 600;
-      border-color: var(--primary);
-    }
-
-    /* Submit Button */
-    .submit-btn {
-      width: 100%;
-      padding: 1.1rem;
-      background: linear-gradient(135deg, #25d366, #128c7e);
-      border: none;
-      border-radius: 1rem;
-      color: #ffffff;
-      font-family: 'Jost', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
-      margin-top: 2rem;
-    }
-
-    .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
-    }
-
-    .footer {
-      margin-top: 2.5rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-sub);
-    }
-
-    .footer a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-  
-    /* Área de toque dos links do rodapé (WCAG 2.5.8). */
-    footer a { display: inline-block; padding-block: .35rem; min-height: 24px; }
-  </style>
 </head>
 <body>
-
-  <header>
-    <a href="/" class="brand-logo">
-      <img src="/favicon.png" alt="Elsângela Melo — Biomédica Esteta" width="32" height="32" loading="lazy" decoding="async" />
-      Elsângela Melo
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo">
+  <div class="progresso" aria-hidden="true"><span></span></div>
+  <div class="casco">
+    <a class="marca" href="/">
+      <img class="marca__em" src="/assets/icons/em.svg" width="36" height="36" alt="">
+      <span><span class="marca__nome">Elsângela Melo</span><span class="marca__funcao">Biomédica Esteta</span></span><span class="visualmente-oculto">, página inicial</span>
     </a>
-    <h1>Agendamento de Consulta</h1>
-    <p>Selecione o procedimento e o horário ideal para o seu atendimento em Goiânia</p>
-  </header>
-
-  <main class="booking-container">
-    
-    <!-- Step 1: Select Service -->
-    <div class="step-title">
-      <span class="step-number">1</span> Escolha o Procedimento Desejado
-    </div>
-    
-    <div class="services-grid" id="servicesGrid">
-      <div class="service-card selected" data-service="Avaliação Geral">
-        <div class="service-name">Avaliação Geral</div>
-        <div class="service-desc">Consulta de diagnóstico facial personalizada</div>
-      </div>
-      <div class="service-card" data-service="Harmonização Facial">
-        <div class="service-name">Harmonização Facial</div>
-        <div class="service-desc">Contorno mandibular, queixo e malar</div>
-      </div>
-      <div class="service-card" data-service="Botox (Toxina Botulínica)">
-        <div class="service-name">Botox</div>
-        <div class="service-desc">Prevenção e tratamento de rugas</div>
-      </div>
-      <div class="service-card" data-service="Preenchimento Labial">
-        <div class="service-name">Preenchimento Labial</div>
-        <div class="service-desc">Volume e contorno com Ácido Hialurônico</div>
-      </div>
-      <div class="service-card" data-service="Bioestimuladores de Colágeno">
-        <div class="service-name">Bioestimuladores</div>
-        <div class="service-desc">Firmeza e estimulação natural de colágeno</div>
-      </div>
-      <div class="service-card" data-service="Skinbooster & Hidratação">
-        <div class="service-name">Skinbooster</div>
-        <div class="service-desc">Hidratação profunda e viço radiante</div>
-      </div>
-      <div class="service-card" data-service="Peeling & Microagulhamento">
-        <div class="service-name">Peeling / Microagulhamento</div>
-        <div class="service-desc">Renovação celular e textura da pele</div>
-      </div>
-      <div class="service-card" data-service="Limpeza de Pele Profissional">
-        <div class="service-name">Limpeza de Pele</div>
-        <div class="service-desc">Remoção de impurezas e nutrição</div>
-      </div>
-    </div>
-
-    <!-- Step 2: Date & Shift -->
-    <div class="step-title" style="margin-top: 2rem;">
-      <span class="step-number">2</span> Data e Período Preferencial
-    </div>
-
-    <div class="form-row">
-      <div class="form-group">
-        <label for="dateInput">Data da Consulta</label>
-        <input type="date" id="dateInput" required />
-      </div>
-      <div class="form-group">
-        <label>Período Preferencial</label>
-        <div class="shift-options">
-          <button type="button" class="shift-btn selected" data-shift="Manhã (09h - 12h)">Manhã</button>
-          <button type="button" class="shift-btn" data-shift="Tarde (14h - 19h)">Tarde</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Step 3: Patient Info -->
-    <div class="step-title" style="margin-top: 1.5rem;">
-      <span class="step-number">3</span> Seus Dados de Contato
-    </div>
-
-    <div class="form-row">
-      <div class="form-group">
-        <label for="nameInput">Seu Nome Completo</label>
-        <input type="text" id="nameInput" placeholder="Ex: Maria Silva" required />
-      </div>
-      <div class="form-group">
-        <label for="phoneInput">Seu WhatsApp / Telefone</label>
-        <input type="tel" id="phoneInput" placeholder="(62) 99999-9999" required />
-      </div>
-    </div>
-
-    <!-- Submit Button -->
-    <button type="button" class="submit-btn" id="btnSubmit">
-      <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-      </svg>
-      Confirmar e Enviar via WhatsApp
+    <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><line class="l1" x1="3" y1="9" x2="23" y2="9"/><line class="l2" x1="3" y1="17" x2="23" y2="17"/></svg>
     </button>
-
-  </main>
-
-  <footer class="footer">
-    <p>© 2026 Elsângela Melo — Biomédica Esteta em Goiânia</p>
-    <p><a href="/contato">Ver todos os canais de contato</a> | <a href="/">Voltar ao site</a></p>
-  </footer>
-
-  <script>
-    // Default date to tomorrow
-    const today = new Date();
-    today.setDate(today.getDate() + 1);
-    const yyyy = today.getFullYear();
-    const mm = String(today.getMonth() + 1).padStart(2, '0');
-    const dd = String(today.getDate()).padStart(2, '0');
-    document.getElementById('dateInput').value = `${yyyy}-${mm}-${dd}`;
-    document.getElementById('dateInput').min = `${yyyy}-${mm}-${dd}`;
-
-    // Service selection logic
-    let selectedService = "Avaliação Geral";
-    const serviceCards = document.querySelectorAll('.service-card');
-    serviceCards.forEach(card => {
-      card.addEventListener('click', () => {
-        serviceCards.forEach(c => c.classList.remove('selected'));
-        card.classList.add('selected');
-        selectedService = card.getAttribute('data-service');
-      });
-    });
-
-    // Shift selection logic
-    let selectedShift = "Manhã (09h - 12h)";
-    const shiftBtns = document.querySelectorAll('.shift-btn');
-    shiftBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        shiftBtns.forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-        selectedShift = btn.getAttribute('data-shift');
-      });
-    });
-
-    // Submit & open WhatsApp
-    document.getElementById('btnSubmit').addEventListener('click', () => {
-      const name = document.getElementById('nameInput').value.trim();
-      const phone = document.getElementById('phoneInput').value.trim();
-      const rawDate = document.getElementById('dateInput').value;
-
-      if (!name) {
-        alert('Por favor, informe seu nome para o agendamento.');
-        document.getElementById('nameInput').focus();
-        return;
-      }
-
-      // Format date for message (DD/MM/YYYY)
-      let formattedDate = rawDate;
-      if (rawDate) {
-        const parts = rawDate.split('-');
-        if (parts.length === 3) {
-          formattedDate = `${parts[2]}/${parts[1]}/${parts[0]}`;
-        }
-      }
-
-      let message = `Olá Dra. Elsângela! Gostaria de agendar um atendimento:\n\n`;
-      message += `📌 *Procedimento:* ${selectedService}\n`;
-      message += `📅 *Data desejada:* ${formattedDate}\n`;
-      message += `⏰ *Período:* ${selectedShift}\n`;
-      message += `👤 *Nome:* ${name}\n`;
-      if (phone) {
-        message += `📱 *Telefone/WhatsApp:* ${phone}\n`;
-      }
-      message += `\nVim pelo site da clínica (Agendamento Online).`;
-
-      const encodedMessage = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/5562982022330?text=${encodedMessage}`;
-
-      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-    });
-  </script>
+    <nav class="menu" id="menu" aria-label="Principal" data-aberto="false">
+      <ul class="menu__lista"><li><a href="/tratamentos/">Tratamentos</a></li><li><a href="/sobre/">Sobre</a></li><li><a href="/resultados/">Resultados</a></li><li><a href="/blog/">Blog</a></li><li><a href="/contato/">Contato</a></li></ul>
+      <a class="btn menu__cta" data-origem="menu" href="https://wa.me/5562982022330?text=Ol%C3%A1%21%20Acessei%20o%20site%20da%20Els%C3%A2ngela%20Melo%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20uma%20avalia%C3%A7%C3%A3o%20de%20est%C3%A9tica%20facial." rel="noopener">Agendar avaliação</a>
+      <div class="menu__rodape">
+        <a class="btn" data-origem="menu-movel" href="https://wa.me/5562982022330?text=Ol%C3%A1%21%20Acessei%20o%20site%20da%20Els%C3%A2ngela%20Melo%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20uma%20avalia%C3%A7%C3%A3o%20de%20est%C3%A9tica%20facial." rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.5v-.5c0-.2-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.4M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2m0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2"/></svg> Agendar avaliação</a>
+        <p>Mabelly Aesthetics · Setor Coimbra, Goiânia<br>Seg a sex, 9h às 19h · Sáb, 9h às 14h</p>
+      </div>
+    </nav>
+  </div>
+</header>
+<main id="conteudo">
+<section class="pag-heroi"><div class="casco">
+  <nav class="migalhas" aria-label="Você está aqui"><ol><li><a href="/">Início</a></li><li><span aria-current="page">Solicitar avaliação</span></li></ol></nav>
+  <div class="pag-heroi__texto" style="margin-top:1.5rem;max-width:58rem">
+    <p class="rubrica">Agendamento</p>
+    <h1>Solicitar <em>avaliação</em></h1>
+    <p class="chamada">Conte o seu interesse e a sua preferência de data. A mensagem abre no WhatsApp, e o horário é confirmado por lá conforme a agenda.</p>
+  </div>
+</div></section>
+<section class="sec sec--escuro" id="formulario" data-cortina>
+  <div class="casco cta-final revela">
+    <div class="cta-final__texto">
+      <p class="rubrica">Solicite uma avaliação</p>
+      <h2>Sua preferência <em>de atendimento</em></h2>
+      <p class="chamada">Atendimento na Mabelly Aesthetics, Setor Coimbra, em Goiânia. Segunda a sexta, das 9h às 19h. Sábado, das 9h às 14h.</p>
+      <p class="chamada">Prefere escrever direto? <a href="https://wa.me/5562982022330?text=Ol%C3%A1%21%20Acessei%20o%20site%20da%20Els%C3%A2ngela%20Melo%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20uma%20avalia%C3%A7%C3%A3o%20de%20est%C3%A9tica%20facial." data-origem="form-direto" rel="noopener">(62) 98202-2330 no WhatsApp</a>.</p>
+    </div>
+    <form class="form" data-form-avaliacao data-whatsapp="5562982022330" novalidate>
+    <div class="campo"><label for="nome">Nome</label>
+      <input id="nome" name="nome" type="text" autocomplete="name" required aria-describedby="erro-nome"><p class="campo__erro" id="erro-nome"></p></div>
+    <div class="campo"><label for="telefone">WhatsApp com DDD</label>
+      <input id="telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel-national" required aria-describedby="erro-telefone"><p class="campo__erro" id="erro-telefone"></p></div>
+    <div class="campo"><label for="interesse">Tratamento de interesse</label>
+      <select id="interesse" name="interesse" required aria-describedby="erro-interesse"><option value="Avaliação geral" data-slug="geral">Avaliação geral</option><option value="Harmonização Facial" data-slug="harmonizacao-facial">Harmonização Facial</option><option value="Preenchimento Labial" data-slug="preenchimento-labial">Preenchimento Labial</option><option value="Toxina Botulínica" data-slug="toxina-botulinica">Toxina Botulínica</option><option value="Bioestimuladores de Colágeno" data-slug="bioestimuladores">Bioestimuladores de Colágeno</option><option value="Skinbooster" data-slug="skinbooster">Skinbooster</option><option value="Peeling" data-slug="peeling">Peeling</option><option value="Microagulhamento" data-slug="microagulhamento">Microagulhamento</option><option value="Outro" data-slug="outro">Outro</option></select><p class="campo__erro" id="erro-interesse"></p></div>
+    <div class="campo"><label for="data">Data de preferência (opcional)</label>
+      <input id="data" name="data" type="date" aria-describedby="ajuda-data"><small id="ajuda-data">É só uma preferência: o horário é confirmado pelo WhatsApp. Atendimento de segunda a sábado.</small></div>
+    <fieldset class="opcoes"><legend>Período de preferência (opcional)</legend>
+      <label class="opcao"><input type="radio" name="periodo" value="Manhã"> Manhã</label>
+      <label class="opcao"><input type="radio" name="periodo" value="Tarde"> Tarde</label>
+    </fieldset>
+    <div class="campo"><label for="mensagem">Mensagem (opcional)</label>
+      <textarea id="mensagem" name="mensagem" rows="3" aria-describedby="ajuda-mensagem"></textarea>
+      <small id="ajuda-mensagem">Não é preciso contar detalhes de saúde aqui: isso é conversado na avaliação.</small></div>
+    <div class="campo"><label class="aceite"><input type="checkbox" name="consentimento" required aria-describedby="erro-consentimento">
+      <span>Concordo com o uso destes dados para responder ao meu contato, conforme a <a href="/politica-de-privacidade/">Política de Privacidade</a>.</span></label>
+      <p class="campo__erro" id="erro-consentimento"></p></div>
+    <button class="btn btn--inteiro btn--claro" type="submit"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.5v-.5c0-.2-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.4M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2m0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2"/></svg> Continuar no WhatsApp</button>
+    <p class="form__nota">O formulário abre uma conversa no WhatsApp com a mensagem pronta. Nada é gravado neste site.</p>
+    <p class="form__status" data-form-status tabindex="-1" role="status" hidden>Abrimos o WhatsApp com a sua mensagem pronta: falta só tocar em enviar. Se não abriu, <a href="https://wa.me/5562982022330" target="_blank" rel="noopener">abra a conversa aqui</a>.</p>
+    <noscript><p class="form__nota">Se o formulário não funcionar no seu navegador, fale direto pelo <a href="https://wa.me/5562982022330?text=Ol%C3%A1%21%20Acessei%20o%20site%20da%20Els%C3%A2ngela%20Melo%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20uma%20avalia%C3%A7%C3%A3o%20de%20est%C3%A9tica%20facial." rel="noopener">WhatsApp</a>.</p></noscript>
+  </form>
+  </div>
+</section>
+</main>
+<footer class="rodape">
+  <div class="casco">
+    <div class="rodape__grade">
+      <div>
+        <p class="rodape__marca">Elsângela Melo</p>
+        <p class="rodape__funcao">Biomédica Esteta · CRBM 17215</p>
+        <p>Estética facial em Goiânia, com avaliação individual e planejamento conforme a anatomia de cada rosto.</p>
+      </div>
+      <nav aria-label="Tratamentos"><h2>Tratamentos</h2><ul><li><a href="/harmonizacao-facial/">Harmonização Facial</a></li><li><a href="/preenchimento-labial/">Preenchimento Labial</a></li><li><a href="/toxina-botulinica/">Toxina Botulínica</a></li><li><a href="/bioestimuladores/">Bioestimuladores de Colágeno</a></li><li><a href="/skinbooster/">Skinbooster</a></li><li><a href="/peeling/">Peeling</a></li><li><a href="/microagulhamento/">Microagulhamento</a></li></ul></nav>
+      <nav aria-label="Navegação do site"><h2>Navegação</h2><ul>
+        <li><a href="/">Início</a></li><li><a href="/sobre/">Sobre Elsângela</a></li><li><a href="/tratamentos/">Todos os tratamentos</a></li>
+        <li><a href="/resultados/">Resultados</a></li><li><a href="/blog/">Blog</a></li><li><a href="/contato/">Contato</a></li>
+      </ul></nav>
+      <div><h2>Atendimento</h2>
+        <address>Mabelly Aesthetics<br>R. 240, 308 — Setor Coimbra<br>Goiânia - GO, 74533-260</address>
+        <ul>
+          <li><a href="https://maps.app.goo.gl/ZiyC8Jrh5vwLyBqy6" rel="noopener">Como chegar</a></li>
+          <li><a href="tel:+5562982022330">(62) 98202-2330</a></li>
+          <li><a href="mailto:elsangelamelo@gmail.com">elsangelamelo@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/elsangelamelo" rel="noopener">Instagram @elsangelamelo</a></li>
+        </ul>
+        <p>Seg a sex, 9h às 19h · Sáb, 9h às 14h</p>
+      </div>
+    </div>
+    <div class="rodape__base">
+      <p>© 2026 Elsângela Melo — Biomédica Esteta.</p>
+      <p><a href="/politica-de-privacidade/">Política de Privacidade</a> </p>
+    </div>
+  </div>
+</footer>
+<aside aria-label="Contato rápido"><a class="wa-flutuante" data-origem="flutuante" href="https://wa.me/5562982022330?text=Ol%C3%A1%21%20Acessei%20o%20site%20da%20Els%C3%A2ngela%20Melo%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20uma%20avalia%C3%A7%C3%A3o%20de%20est%C3%A9tica%20facial." rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.5v-.5c0-.2-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.4M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2m0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2"/></svg></a></aside>
 </body>
 </html>

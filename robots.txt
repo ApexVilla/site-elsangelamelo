@@ -1,16 +1,10 @@
 # elsangelamelo.com
-# Nada é bloqueado de propósito: CSS, JS e imagens precisam estar acessíveis
-# para o Google renderizar a página como um visitante a vê. Rastreadores de
-# mecanismos de resposta (IA) também são bem-vindos — o conteúdo do site é
-# informativo e feito para ser citado corretamente.
+# Nada é bloqueado aqui: CSS, JS e imagens precisam estar acessíveis para os buscadores.
+# Páginas sem valor de busca usam <meta name="robots" content="noindex">, não este arquivo.
+# Atenção: se o painel do Cloudflare estiver com o robots.txt gerenciado, ele insere
+# outro bloco antes deste, com regras para rastreadores de IA. Esse bloco não vem daqui.
 
 User-agent: *
 Allow: /
-
-# Páginas de redirecionamento não têm conteúdo próprio para indexar.
-# Elas já trazem <meta name="robots" content="noindex">; a linha abaixo evita
-# gasto de rastreio à toa.
-Disallow: /whatsapp/
-Disallow: /instagram/
 
 Sitemap: https://elsangelamelo.com/sitemap.xml
