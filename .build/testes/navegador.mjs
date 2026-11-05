@@ -25,6 +25,21 @@ for (const w of LARGURAS) {
     const r = await p.evaluate(() => ({ sw: document.documentElement.scrollWidth, cw: document.documentElement.clientWidth, h1: document.querySelectorAll('h1').length }));
     ok(r.sw <= r.cw, `rolagem lateral ${u} @${w}: ${r.sw}>${r.cw}`);
     ok(r.h1 === 1, `H1 ${u}`);
+    const partidas = await p.evaluate(() => {
+      const achadas = [];
+      for (const el of document.querySelectorAll('h1,h2,h3,.frase,.heroi__nome,.marca__nome,.btn')) {
+        const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+        for (let n = w.nextNode(); n; n = w.nextNode()) {
+          for (const m of n.textContent.matchAll(/[^\s-]+/g)) {
+            const g = document.createRange(); g.setStart(n, m.index); g.setEnd(n, m.index + m[0].length);
+            const tops = new Set([...g.getClientRects()].filter(q => q.width > 0).map(q => Math.round(q.top)));
+            if (tops.size > 1) achadas.push(m[0]);
+          }
+        }
+      }
+      return achadas;
+    });
+    ok(!partidas.length, `palavra partida ${u} @${w}: ${partidas.slice(0, 3).join(', ')}`);
     p.removeAllListeners('console'); p.removeAllListeners('pageerror');
     contagem++;
   }

@@ -214,7 +214,21 @@
         var s = doc.createElement('script');
         s.src = fonteLenis;
         s.onload = function () {
-          if (window.Lenis) new window.Lenis({ autoRaf: true, lerp: 0.09, anchors: true });
+          if (!window.Lenis) return;
+          var rolagem = new window.Lenis({ autoRaf: true, lerp: 0.09 });
+          /* Âncoras: posição calculada na hora, com folga para o cabeçalho, e foco no destino. */
+          doc.addEventListener('click', function (e) {
+            var link = e.target.closest('a[href^="#"]');
+            if (!link) return;
+            var id = link.getAttribute('href').slice(1);
+            var destino = id && doc.getElementById(id);
+            if (!destino) return;
+            e.preventDefault();
+            rolagem.scrollTo(window.scrollY + destino.getBoundingClientRect().top - 84);
+            window.history.pushState(null, '', '#' + id);
+            destino.setAttribute('tabindex', '-1');
+            destino.focus({ preventScroll: true });
+          });
         };
         doc.head.appendChild(s);
       });

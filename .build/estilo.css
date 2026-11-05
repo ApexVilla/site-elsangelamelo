@@ -145,6 +145,7 @@ h1 em,h2 em,h3 em{color:var(--rosa);font-weight:400}
 @media(min-width:900px){
   .heroi__grade{grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-areas:"titulo foto" "corpo foto";column-gap:clamp(2rem,5vw,5.5rem);row-gap:var(--e5);align-items:start}
   .heroi__titulo{grid-area:titulo;position:relative;z-index:2}
+  .heroi__nome{font-size:clamp(4.5rem,11vw,10rem)}
   .heroi__foto{grid-area:foto}
   .heroi__foto img{aspect-ratio:4/5;object-position:50% 50%}
   .heroi__foto::before{content:"";position:absolute;inset:1.5rem -1.5rem -1.5rem 1.5rem;border:1px solid var(--dourado);z-index:-1}
@@ -194,6 +195,7 @@ h1 em,h2 em,h3 em{color:var(--rosa);font-weight:400}
 .linha{display:grid;grid-template-columns:minmax(0,1fr) 84px;gap:.5rem var(--e3);padding-block:var(--e4);border-top:1px solid var(--fio)}
 .linha:last-child{border-bottom:1px solid var(--fio)}
 .linha__mini{grid-column:2;grid-row:1/span 2;width:84px;height:auto}
+@media(max-width:359px){.linha{grid-template-columns:minmax(0,1fr)}.linha__mini{display:none}}
 .linha__n{font-size:.8125rem;letter-spacing:.14em;color:var(--rosa-texto);display:block;margin-bottom:.4rem}
 .linha h3 a{text-decoration:none;background:linear-gradient(var(--rosa),var(--rosa)) 0 100%/0 1px no-repeat;transition:background-size .5s var(--suave)}
 .linha h3 a:hover,.linha.is-ativa h3 a{background-size:100% 1px}
@@ -500,7 +502,7 @@ html.lenis{scroll-behavior:auto!important}
 .topo[data-recolhido="true"]:not(:focus-within){transform:translateY(-100%)}
 .progresso{position:absolute;left:0;right:0;bottom:-1px;height:2px;pointer-events:none}
 .progresso span{display:block;height:100%;background:linear-gradient(90deg,var(--rosa),var(--dourado));transform:scaleX(0);transform-origin:left}
-.heroi__palavra{display:block}
+.heroi__palavra{display:block;white-space:nowrap}
 .paralaxe{display:block;overflow:hidden}
 .imersivo .paralaxe img{transform:scale(1.12)}
 
@@ -541,3 +543,6 @@ html.lenis{scroll-behavior:auto!important}
 .casco-pista{width:100%}
 @media(max-width:999px){.casco-pista{padding-inline:var(--margem)}}
 @media(min-width:1000px){html:not(.imersivo) .casco-pista{padding-inline:var(--margem);max-width:calc(var(--largura) + 2*var(--margem));margin-inline:auto}}
+/* Celular: o CTA vem logo depois da foto, para caber na primeira dobra mesmo com as barras do navegador. */
+@media(max-width:899px){.heroi__corpo .acoes{order:-1}}
+@media(max-width:899px) and (max-height:600px){.heroi__foto img{aspect-ratio:2/1}}
