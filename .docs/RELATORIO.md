@@ -1,6 +1,6 @@
 # Relatório: reestruturação de elsangelamelo.com
 
-Data: 5 de novembro de 2026. Estado: **pronto no branch `reestruturacao-premium`, ainda não publicado.**
+Data: 5 de novembro de 2026. Estado: **publicado em 5 de novembro de 2026.**
 
 ## A. Diagnóstico inicial
 
@@ -73,24 +73,28 @@ Data: 5 de novembro de 2026. Estado: **pronto no branch `reestruturacao-premium`
 
 ## G. Performance
 
-Lighthouse, celular simulado. "Antes" foi medido em produção; "depois", na prévia local com a configuração proposta, sem Cloudflare. **A comparação é indicativa: é preciso medir de novo depois de publicar.**
+Lighthouse no celular simulado, **medido em produção antes e depois**. Os números variam um pouco a cada execução.
 
 | Métrica | Home antes | Home depois | Tratamento antes | Tratamento depois |
 |---|---|---|---|---|
-| Desempenho | 89 | 99 | 90 | 100 |
+| Desempenho | 89 | 95 | 90 | 97 |
 | Acessibilidade | 96 | 100 | 93 | 100 |
 | Boas práticas | 100 | 100 | 100 | 100 |
-| SEO | 92 | 100 | 92 | 100 |
-| FCP | 2,8 s | 1,1 s | 2,8 s | 1,1 s |
-| LCP | 3,0 s | 1,7 s | 2,8 s | 1,6 s |
-| CLS | 0,029 | 0 | 0,067 | 0,001 |
-| Peso | 202 KiB | 141 KiB | 123 KiB | 118 KiB |
+| SEO | 92 | 92 | 92 | 92 |
+| FCP | 2,8 s | 1,3 s | 2,8 s | 1,3 s |
+| LCP | 3,0 s | 2,1 s | 2,8 s | 2,0 s |
+| CLS | 0,029 | 0 | 0,067 | 0 |
+| Peso | 202 KiB | 146 KiB | 123 KiB | 122 KiB |
 
-No desktop, a home e o tratamento marcaram 100 nas quatro categorias. O INP não pode ser medido em laboratório: depende de dados reais de uso (o TBT da home ficou em 100 ms). O SEO deve continuar em 92 em produção enquanto o Cloudflare inserir a linha `Content-Signal` no `robots.txt`.
+No desktop, a home e o tratamento marcaram 100 em desempenho, acessibilidade e boas práticas, e 92 em SEO. **O SEO fica em 92 por causa da linha `Content-Signal` que o Cloudflare insere no `robots.txt`.** Sem essa linha, a prévia marcou 100. O Google ignora essa diretiva desconhecida, então a nota não indica problema de indexação. O INP não pode ser medido em laboratório: depende de dados reais de uso (o TBT da home ficou em 210 ms).
 
 ## H. Responsividade
 
-22 páginas em 9 larguras (320, 360, 390, 414, 768, 1024, 1280, 1440 e 1920 px), somando 198 combinações, sem rolagem lateral. Menu móvel e alvos de toque testados. **Tudo foi testado em Chrome com emulação**, sem aparelhos reais nem Safari e Firefox.
+- **Chrome:** 22 páginas em 9 larguras (320, 360, 390, 414, 768, 1024, 1280, 1440 e 1920 px), somando 198 combinações, sem rolagem lateral nem palavra partida em títulos, botões ou marca.
+- **Firefox 157 e WebKit 27.2 (motor do Safari, com emulação de iPhone 14):** 9 páginas em desktop e celular, sem erros. O WebKit foi testado na prévia, em container descartável. O Firefox foi testado também em produção.
+- **Dobra:** o botão de agendar fica visível em 320x568, 360x640, 390x664, 390x844 e 414x736.
+- **Mudança de largura:** de larga para estreita e de volta (modo mobile do DevTools, tablet girado), sem recorte nem sobra de layout. Esse caso gerou um defeito real, relatado por Samir logo depois da publicação e corrigido.
+- **Não testado:** aparelhos físicos.
 
 ## I. Acessibilidade
 
@@ -106,7 +110,7 @@ Lista completa em `.docs/PENDENCIAS.md`. Principais: formação e biografia, reg
 
 Em ordem de impacto provável para a visibilidade:
 
-1. Publicar e reenviar o sitemap no Search Console.
+1. Reenviar o sitemap no Search Console e pedir indexação da home e de `/blog/cuidados-apos-preenchimento-labial/`.
 2. Conferir o Perfil da Empresa no Google: nome, categoria, serviços, fotos e link para o site. Pedir avaliações a quem já foi atendido, sem incentivos.
 3. Colocar o link do site na bio do Instagram e padronizar nome, endereço e telefone nos diretórios onde já existe cadastro.
 4. Publicar formação e CRBM completo: é o maior ganho de confiança disponível.
@@ -117,12 +121,14 @@ O domínio aparece no Search Console há cerca de três meses e recebeu poucos c
 
 ## L. Problemas não resolvidos e limites
 
-- **Publicação:** nada foi publicado. nginx e CSP também mudam na publicação (ver `.build/deploy/LEIA-ME.md`).
+- **Traefik:** a CSP nova está ativa, mas `/root/apex-erp/deploy/traefik/dynamic/elsangelamelo.yml` ficou **modificado sem commit** no repositório `apex-erp`, que não faz parte desta tarefa. Um deploy a partir desse repositório pode voltar a CSP antiga e bloquear o mapa. Backups em `/root/apexvilla/deploy/elsangelamelo/backups-20261105/`.
+- **Cache do Cloudflare:** ainda serve `favicon.png` e as imagens antigas de `/assets/` até o prazo expirar, sem efeito visível, pois as páginas usam os arquivos novos.
 - **Conteúdo clínico:** continua sem revisão da profissional. As correções desta rodada são editoriais, sem consulta à literatura.
 - **Fotos:** baixa resolução (682 a 959 px). Evitei foto em tela cheia por isso. Os tratamentos usam ilustração, não fotografia. AVIF não foi gerado por falta de codificador: as imagens estão em WebP.
 - **Palavras-chave:** sem ferramenta de volume e sem análise confiável de concorrentes, porque a busca disponível não trouxe dados úteis de Goiânia.
 - **Google Rich Results Test:** não foi executado. O validador usado foi o schema.org.
+- **Harmonização de prazos:** onde as páginas se contradiziam, o texto passou a remeter à orientação recebida, sem número. A profissional ainda precisa definir os prazos que deseja publicar.
 - **Registro profissional:** CRBM 17215 vem do próprio site e não foi confirmado em fonte externa.
-- **Erros de console do PageSpeed:** não se reproduziram aqui. Hipótese não confirmada: script injetado pelo Cloudflare para robôs. Conferir depois de publicar.
+- **Erros de console do PageSpeed:** não apareceram em Chrome, Firefox nem no Lighthouse em produção. Hipótese não confirmada: script injetado pelo Cloudflare só para os robôs do PageSpeed. Conferir no próprio PageSpeed.
 - **Cloudflare e Perfil no Google:** alterações dependem de acesso.
 - **Apex:** a tarefa não foi registrada, porque a ApexVilla não aparece entre as empresas autorizadas nesta conexão.

@@ -207,6 +207,33 @@ for (const k of Object.keys(contagemAxe)) falhas.push(`axe ${k}`);
   ok(/translate3d\(-\d+/.test(m), 'trilho não andou: ' + m);
   await c.close(); console.log('rolagem: âncora e trilho funcionando');
 }
+// 10. Tela larga que vira estreita (modo mobile do DevTools, tablet girado): nada pode ficar cortado
+{
+  const c = await b.newContext({ viewport: { width: 1280, height: 800 } });
+  const p = await c.newPage(); escutar(p, 'redimensionar');
+  await p.goto(BASE + '/', { waitUntil: 'networkidle' });
+  const topo = await p.evaluate(() => document.querySelector('[data-cortina]').getBoundingClientRect().top + scrollY);
+  await p.evaluate(v => window.scrollTo({ top: v, behavior: 'instant' }), topo - 620);
+  await p.waitForTimeout(1200);
+  const recorte = await p.evaluate(() => document.querySelector('[data-cortina]').style.clipPath);
+  ok(recorte.includes('inset'), 'cortina: deveria estar animando em tela larga: ' + recorte);
+  const margemLivre = await p.evaluate(() => {
+    const s = document.querySelector('[data-cortina]'); const m = /inset\(0(?:px)? ([\d.]+)vw\)/.exec(s.style.clipPath);
+    const corte = m ? +m[1] * innerWidth / 100 : 0;
+    return s.querySelector('.rubrica').getBoundingClientRect().left - corte;
+  });
+  ok(margemLivre > 0, `cortina: corta o texto em tela larga (${Math.round(margemLivre)}px)`);
+  await p.setViewportSize({ width: 390, height: 844 });
+  await p.waitForTimeout(600);
+  const depois = await p.evaluate(() => ({ recorte: [...document.querySelectorAll('[data-cortina]')].map(s => s.style.clipPath).join(''), largo: document.documentElement.classList.contains('imersivo-largo'), pista: document.querySelector('[data-pista]').style.height, trilho: document.querySelector('[data-pista] .passos').style.transform, sw: document.documentElement.scrollWidth, cw: document.documentElement.clientWidth }));
+  ok(!depois.recorte, 'ao estreitar, sobrou recorte: ' + depois.recorte);
+  ok(!depois.largo && !depois.pista && !depois.trilho, 'ao estreitar, sobrou layout de tela larga: ' + JSON.stringify(depois));
+  ok(depois.sw <= depois.cw, `ao estreitar, rolagem lateral: ${depois.sw}>${depois.cw}`);
+  await p.setViewportSize({ width: 1280, height: 800 });
+  await p.waitForTimeout(600);
+  ok((await p.evaluate(() => document.documentElement.classList.contains('imersivo-largo'))), 'ao alargar de novo, não voltou ao modo largo');
+  await c.close(); console.log('redimensionar: de largo para estreito e de volta, sem recorte nem sobras');
+}
 await b.close();
 console.log(falhas.length ? `\n${falhas.length} FALHA(S):\n` + [...new Set(falhas)].slice(0, 50).join('\n') : '\nTODOS OS TESTES PASSARAM');
 process.exit(falhas.length ? 1 : 0);

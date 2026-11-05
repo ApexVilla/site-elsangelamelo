@@ -26,17 +26,17 @@ Para quem é: quem mantém o site no servidor.
 
 As pastas `.build` e `.docs` respondem 403 em produção, pela regra de arquivos ocultos do nginx.
 
-## Publicar esta reestruturação
+## Publicar uma alteração
 
-Faça nesta ordem. Os dois arquivos de configuração ficam fora deste repositório:
+1. Faça o commit em um branch, no worktree, e envie ao GitHub.
+2. Publique: `git -C /root/apexvilla/sites/elsangelamelo merge --ff-only origin/<branch>` e depois `git -C /root/apexvilla/sites/elsangelamelo push origin main`.
+3. Confira no ar: home, um tratamento, `/tratamentos/peeling` (301), `/whatsapp` (302), `/.build/build.py` (403), o botão "Mostrar mapa" e o console do navegador.
 
-1. **Site:** `git -C /root/apexvilla/sites/elsangelamelo merge --ff-only origin/reestruturacao-premium`
-2. **nginx:** faça backup e copie `.build/deploy/default.conf` para `/root/apexvilla/deploy/elsangelamelo/nginx/default.conf`. Depois: `docker exec elsangelamelo-web nginx -t && docker exec elsangelamelo-web nginx -s reload`
-3. **Traefik:** faça backup e troque o `contentSecurityPolicy` de `/root/apex-erp/deploy/traefik/dynamic/elsangelamelo.yml` pelo conteúdo de `.build/deploy/traefik-csp.txt`. O Traefik recarrega sozinho. Atualize também o comentário do arquivo: os hashes de script inline deixaram de existir. Esse arquivo pertence ao repositório `apex-erp`.
-4. **Conferência no ar:** home, um tratamento, `/tratamentos/peeling` (301), `/whatsapp` (302), `/.build/build.py` (403), o botão "Mostrar mapa" e o console do navegador.
-5. **Search Console:** reenviar `sitemap.xml` e pedir indexação da home e de `/blog/cuidados-apos-preenchimento-labial/`.
+**Se mudar o nginx:** `.build/deploy/default.conf` é a cópia de referência de `/root/apexvilla/deploy/elsangelamelo/nginx/default.conf`. Depois de copiar: `docker exec elsangelamelo-web nginx -t && docker exec elsangelamelo-web nginx -s reload`.
 
-**Reverter:** `git -C /root/apexvilla/sites/elsangelamelo reset --hard <commit anterior>` e restaurar os dois backups. O `reset` é destrutivo, então confirme o commit antes.
+**Se mudar a CSP:** `.build/deploy/traefik-csp.txt` é a cópia de referência do `contentSecurityPolicy` de `/root/apex-erp/deploy/traefik/dynamic/elsangelamelo.yml`, arquivo do repositório `apex-erp`. O Traefik recarrega sozinho ao salvar.
+
+**Reverter a publicação de 5 de novembro de 2026:** os backups estão em `/root/apexvilla/deploy/elsangelamelo/backups-20261105/`, com nginx, Traefik e o commit anterior do site (`commit-anterior.txt`). Reverter o site com `git reset --hard` é destrutivo: confirme o commit antes.
 
 ## Quando houver ID do Google Analytics 4
 

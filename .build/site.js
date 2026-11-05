@@ -116,6 +116,10 @@
       vh = window.innerHeight;
       largura = window.innerWidth;
       definirLargo();
+      /* A cortina só existe em tela larga: ao estreitar, não pode sobrar recorte. */
+      if (!consultaLarga.matches) {
+        cortinas.forEach(function (c) { c.el.style.clipPath = ''; c.ultimo = -1; });
+      }
       pistas.forEach(function (p) {
         if (!p.trilho) return;
         if (consultaLarga.matches) {
@@ -192,7 +196,7 @@
           var pos = limitar((y + vh - c.topo) / (vh * 0.7), 0, 1);
           if (pos === c.ultimo) return;
           c.ultimo = pos;
-          c.el.style.clipPath = pos >= 1 ? '' : 'inset(0 ' + ((1 - pos) * 6).toFixed(2) + 'vw)';
+          c.el.style.clipPath = pos >= 1 ? '' : 'inset(0 ' + ((1 - pos) * 2.5).toFixed(2) + 'vw)';
         });
       }
     };
@@ -201,6 +205,7 @@
     var agendar = function () { if (!agendado) { agendado = true; window.requestAnimationFrame(desenhar); } };
     window.addEventListener('scroll', agendar, { passive: true });
     var remedir = function () { medir(); agendar(); };
+    consultaLarga.addEventListener('change', remedir);
     var espera;
     window.addEventListener('resize', function () { window.clearTimeout(espera); espera = window.setTimeout(remedir, 150); });
     window.addEventListener('load', remedir);
