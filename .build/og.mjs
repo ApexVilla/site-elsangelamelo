@@ -8,7 +8,7 @@ const require = createRequire(process.env.PW_DIR ? path.join(process.env.PW_DIR,
 const { chromium } = require('playwright-core');
 const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const url = (p) => 'file://' + path.join(raiz, p);
-const TRAT = [['harmonizacao-facial','Harmonização Facial'],['preenchimento-labial','Preenchimento Labial'],['toxina-botulinica','Toxina Botulínica'],['bioestimuladores','Bioestimuladores de Colágeno'],['skinbooster','Skinbooster'],['peeling','Peeling'],['microagulhamento','Microagulhamento']];
+const TRAT = [['harmonizacao-facial','Harmonização Facial'],['preenchimento-labial','Preenchimento Labial'],['toxina-botulinica','Toxina Botulínica'],['bioestimuladores','Bioestimuladores de Colágeno'],['skinbooster','Skinbooster'],['peeling','Peeling'],['microagulhamento','Microagulhamento'],['limpeza-de-pele','Limpeza de Pele']];
 const css = `
 @font-face{font-family:B;src:url(${url('assets/fonts/bodoni-moda.woff2')});font-weight:400 500}
 @font-face{font-family:BI;src:url(${url('assets/fonts/bodoni-moda-italic.woff2')})}
@@ -24,7 +24,7 @@ h1{font-family:B;font-weight:400;font-size:var(--tam,104px);line-height:.98;lett
 .f img{height:630px;width:auto;display:block}
 .fig{padding:36px 56px 0 24px}.fig img{height:594px}
 `;
-const pag = (tit, sub, img, fig, tam) => `<!doctype html><meta charset=utf-8><style>${css}</style><body><div class=t><div><p class=r>Biomédica esteta · CRBM 17215</p><h1 style="--tam:${tam}px">${tit}</h1><p class=s>${sub}</p></div><p class=p>Mabelly Aesthetics · Setor Coimbra, Goiânia</p></div><div class="f ${fig ? 'fig' : ''}"><img src="${url(img)}"></div>`;
+const pag = (tit, sub, img, fig, tam) => `<!doctype html><meta charset=utf-8><style>${css}</style><body><div class=t><div><p class=r>Biomédica esteta · CRBM-3 17215</p><h1 style="--tam:${tam}px">${tit}</h1><p class=s>${sub}</p></div><p class=p>MaBelly Aesthetics · Setor Coimbra, Goiânia</p></div><div class="f ${fig ? 'fig' : ''}"><img src="${url(img)}"></div>`;
 const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
 const c = await b.newContext({ viewport: { width: 1200, height: 630 } });
 const p = await c.newPage();

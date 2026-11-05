@@ -4,8 +4,8 @@ import json, pathlib, re, sys, xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://elsangelamelo.com"
-PROIBIDO = [r"\[INSERIR", r"\[inserir", r"lorem ipsum", r"\+500", r"\+6\s*anos", r"6 anos", r"fonts\.googleapis", r"fonts\.gstatic",
-            r"Revisado por", r"Aguardando publicação", r"em preenchimento", r"Limpeza de Pele", r"resultados naturais", r"Falar com a equipe", r"viço radiante", r"data-pendente"]
+PROIBIDO = [r"\[INSERIR", r"\[inserir", r"lorem ipsum", r"\+6\s*anos", r"6 anos", r"fonts\.googleapis", r"fonts\.gstatic",
+            r"Revisado por", r"Aguardando publicação", r"em preenchimento", r"resultados naturais", r"Falar com a equipe", r"viço radiante", r"data-pendente", r"CRBM 17215"]
 erros, avisos = [], []
 class P(HTMLParser):
     def __init__(s):
@@ -59,6 +59,7 @@ for arq in paginas:
     e = lambda m: erros.append(f"{rel}: {m}")
     for pad in PROIBIDO:
         if re.search(pad, bruto, re.I): e(f"texto proibido: {pad}")
+    if "Mabelly" in texto: e("grafia incorreta: Mabelly (o correto é MaBelly)")
     h1 = [h for t, h in x.h if t == "h1"]
     if len(h1) != 1: e(f"{len(h1)} H1")
     nivel = 1

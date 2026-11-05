@@ -60,6 +60,10 @@ REGIOES = {
     "skinbooster": PELE.format(p="p-gota"),
     "peeling": PELE.format(p="p-fio"),
     "microagulhamento": PELE.format(p="p-micro"),
+    "limpeza-de-pele": """
+      <path class="r-area" d="M128 106C170 88 230 88 272 106C280 124 284 146 284 170C232 156 168 156 116 170C116 146 120 124 128 106Z"/>
+      <path class="r-area" d="M182 172C194 168 206 168 218 172L226 318C210 328 190 328 174 318Z"/>
+      <path class="r-area" d="M168 402C188 412 212 412 232 402C224 428 212 442 200 446C188 442 176 428 168 402Z"/>""",
 }
 
 ROTULOS = {
@@ -70,6 +74,7 @@ ROTULOS = {
     "skinbooster": "a pele do rosto, com pontos que sugerem microaplicações",
     "peeling": "a superfície da pele do rosto, em linhas finas",
     "microagulhamento": "a pele do rosto, em uma trama de pontos muito finos",
+    "limpeza-de-pele": "a pele do rosto, com destaque para testa, nariz e queixo",
 }
 
 CSS_ARQUIVO = """

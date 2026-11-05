@@ -28,7 +28,8 @@ Para quem é: quem cuida do conteúdo e do SEO do site.
 | `/skinbooster/` | Comercial local | skinbooster Goiânia | skinbooster para o rosto | Hipótese |
 | `/peeling/` | Comercial local | peeling facial Goiânia | peeling de rosto | Hipótese |
 | `/microagulhamento/` | Comercial local | microagulhamento Goiânia | microagulhamento facial | Hipótese |
-| `/contato/` | Navegacional | agendar avaliação estética Goiânia | Mabelly; endereço; WhatsApp | Search Console |
+| `/limpeza-de-pele/` | Comercial local | limpeza de pele Goiânia | limpeza de pele facial | Hipótese |
+| `/contato/` | Navegacional | agendar avaliação estética Goiânia | MaBelly; endereço; WhatsApp | Search Console |
 | `/resultados/` | Expectativa | resultado de procedimentos estéticos | por que os resultados variam | Hipótese |
 | `/blog/cuidados-apos-preenchimento-labial/` | Informativa | cuidados após preenchimento labial | cuidados pós; recomendações pós-preenchimento | Search Console |
 | `/blog/o-que-e-harmonizacao-facial/` | Informativa | o que é harmonização facial | para que serve | Hipótese |
@@ -50,4 +51,4 @@ Só devem ser publicados depois de escritos ou revisados pela profissional:
 4. O que é microagulhamento?
 5. Como funciona o peeling facial?
 
-Hoje, 4 das 7 técnicas não têm artigo dedicado. Estes textos fecham essa lacuna de links internos.
+Hoje, 5 das 8 técnicas não têm artigo dedicado. Estes textos fecham essa lacuna de links internos.

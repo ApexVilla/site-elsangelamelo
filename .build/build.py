@@ -126,8 +126,8 @@ def ld_pessoa():
     return {
         "@type": "Person", "@id": ID_PESSOA, "name": D.NOME, "alternateName": D.NOME_VARIACOES,
         "jobTitle": D.PROFISSAO,
-        "identifier": {"@type": "PropertyValue", "name": "CRBM", "value": D.CRBM.split()[-1]},
-        "description": "Biomédica esteta com atuação em estética facial em Goiânia, Goiás, com atendimento na Mabelly Aesthetics, no Setor Coimbra.",
+        "identifier": {"@type": "PropertyValue", "name": "CRBM-3", "value": D.CRBM.split()[-1]},
+        "description": "Biomédica esteta com atuação em estética facial em Goiânia, Goiás, com atendimento na MaBelly Aesthetics, no Setor Coimbra.",
         "url": f"{D.SITE}/sobre/", "image": FOTO_URL, "telephone": D.TEL_E164,
         "worksFor": {"@id": ID_CLINICA}, "workLocation": {"@id": ID_CLINICA},
         "knowsAbout": [t["nome"] for t in D.TRATAMENTOS], "sameAs": [D.INSTAGRAM],
@@ -355,7 +355,7 @@ def bloco_profissional():
       <p class="rubrica">Quem realiza o atendimento</p>
       <h2>{D.NOME}</h2>
       <p class="sobre__registro">Biomédica esteta · {D.CRBM}</p>
-      <p>{D.NOME} atua com estética facial em Goiânia, na {D.CLINICA}, no {D.BAIRRO}. Cada atendimento parte de uma avaliação presencial e individual.</p>
+      <p>{D.NOME} é formada como biomédica esteta e atua com estética facial em Goiânia, na {D.CLINICA}, no {D.BAIRRO}. Cada atendimento parte de uma avaliação presencial, individual e gratuita.</p>
       <div>{seta("Conhecer a profissional", "/sobre/")}</div>
     </div>
   </div>
@@ -392,7 +392,7 @@ def faixa_cta(texto, msg, origem):
   <div class="casco cabeca revela" style="margin-bottom:0">
     <p class="rubrica">Próximo passo</p>
     <h2>O primeiro passo é <em>uma conversa</em></h2>
-    <p class="chamada">{texto}</p>
+    <p class="chamada">{texto} A avaliação é gratuita.</p>
     <div class="acoes">
       {btn_wa("Agendar avaliação", msg, origem, "btn btn--claro")}
       <a class="btn btn--fio-claro" href="/contato/">Outras formas de contato</a>
@@ -438,7 +438,7 @@ def formulario(agendamento=False):
 
 
 def secao_form(titulo="O primeiro passo é <em>uma conversa</em>", texto=None, agendamento=False, ancora="avaliacao"):
-    texto = texto or "A avaliação é o momento de entender o que é indicado para o seu rosto, sem compromisso de realizar qualquer procedimento no mesmo dia."
+    texto = texto or "A avaliação é gratuita. É o momento de entender o que é indicado para o seu rosto, sem compromisso de realizar qualquer procedimento no mesmo dia."
     return f"""<section class="sec sec--escuro" id="{ancora}" data-cortina>
   <div class="casco cta-final revela">
     <div class="cta-final__texto">
@@ -478,7 +478,7 @@ def secao_passos():
       <div class="cabeca revela">
         <p class="rubrica">Passo a passo</p>
         <h2>Como funciona a avaliação</h2>
-        <p class="chamada">Um percurso conduzido sem pressa e sem compromisso de fazer qualquer procedimento no mesmo dia.</p>
+        <p class="chamada">A avaliação é gratuita e conduzida sem pressa, sem compromisso de fazer qualquer procedimento no mesmo dia.</p>
       </div>
     </div>
     <div class="casco-pista">{lista_passos()}</div>
@@ -491,7 +491,7 @@ def secao_passos():
 def pagina_home():
     url = "/"
     title = "Elsângela Melo | Biomédica Esteta em Goiânia"
-    desc = "Elsângela Melo, biomédica esteta em Goiânia. Harmonização facial, preenchimento labial, toxina botulínica e bioestimuladores, com avaliação individual no Setor Coimbra."
+    desc = "Elsângela Melo, biomédica esteta em Goiânia. Harmonização facial, preenchimento labial, toxina botulínica e bioestimuladores, com avaliação gratuita no Setor Coimbra."
     _, faq, _ = fragmento("_faq-home.html")
     linhas = []
     for i, t in enumerate(D.TRATAMENTOS):
@@ -545,6 +545,7 @@ def pagina_home():
       <div class="heroi__dados">
         <p><strong>Onde:</strong> {D.CLINICA}, {D.RUA}, {D.BAIRRO}, {D.CIDADE}</p>
         <p><strong>Quando:</strong> {D.HORARIO_CURTO}</p>
+        <p><strong>Avaliação:</strong> gratuita</p>
       </div>
     </div>
   </div>
@@ -554,7 +555,7 @@ def pagina_home():
   <div class="casco">
     <div class="cabeca revela">
       <p class="rubrica">Tratamentos</p>
-      <h2>Sete recursos, <em>um rosto de cada vez</em></h2>
+      <h2>Oito recursos, <em>um rosto de cada vez</em></h2>
       <p class="chamada">Cada recurso atua em uma região ou camada diferente. Percorra o mapa para entender o que cada um faz. A indicação é sempre definida na avaliação presencial.</p>
     </div>
     <div class="mapa" data-mapa-rosto>
@@ -578,7 +579,7 @@ def pagina_home():
       <p class="rubrica">Sobre a profissional</p>
       <h2>{D.NOME}</h2>
       <p class="sobre__registro">Biomédica esteta · {D.CRBM}</p>
-      <p>{D.NOME} atua com estética facial em Goiânia, na {D.CLINICA}, no {D.BAIRRO}. O atendimento parte de uma avaliação presencial: entender o rosto, o histórico de saúde e o objetivo de quem chega, antes de falar em procedimento.</p>
+      <p>{D.NOME} é formada como biomédica esteta e atua com estética facial em Goiânia, na {D.CLINICA}, no {D.BAIRRO}. O atendimento parte de uma avaliação presencial e gratuita: entender o rosto, o histórico de saúde e o objetivo de quem chega, antes de falar em procedimento.</p>
       <p>O que orienta o trabalho é a ideia de que um bom resultado não chama atenção para si. Ele busca equilíbrio e proporção sem apagar os traços que fazem cada pessoa ser reconhecida.</p>
       <div>{seta("Conhecer a profissional", "/sobre/")}</div>
     </div>
@@ -607,7 +608,7 @@ def pagina_home():
   <div class="fatores" data-cascata>
     <div><h3>Cada rosto responde de um jeito</h3><p>Anatomia, resposta do organismo, hábitos e cuidados depois do procedimento influenciam o que se vê. Os resultados variam de pessoa para pessoa.</p></div>
     <div><h3>A expectativa vem antes</h3><p>A avaliação serve para separar o que a técnica faz do que ela não faz. Se o objetivo não for compatível com a indicação, isso é dito antes.</p></div>
-    <div><h3>Sem imagem de banco</h3><p>Este site não usa fotos genéricas como se fossem resultados. A página de resultados explica como entender essa evolução.</p>{seta("O que influencia um resultado", "/resultados/")}</div>
+    <div><h3>Resultados no Instagram</h3><p>Os registros do trabalho ficam no Instagram. Aqui no site, você entende o que influencia cada resultado.</p>{seta("Ver no Instagram " + D.INSTAGRAM_H, D.INSTAGRAM, ' rel="noopener" data-origem="home-resultados"')}{seta("O que influencia um resultado", "/resultados/")}</div>
   </div>
 </div></section>
 {depoimentos}
@@ -753,7 +754,7 @@ def pagina_artigo(a, artigos):
 {faixa_cta(d['cta'], msg, f"blog-{a}")}
 </main>"""
     pessoa = {"@type": "Person", "@id": ID_PESSOA, "name": D.NOME, "jobTitle": D.PROFISSAO, "url": f"{D.SITE}/sobre/",
-              "identifier": {"@type": "PropertyValue", "name": "CRBM", "value": D.CRBM.split()[-1]}}
+              "identifier": {"@type": "PropertyValue", "name": "CRBM-3", "value": D.CRBM.split()[-1]}}
     artigo = {"@type": "BlogPosting", "@id": f"{D.SITE}{url}#artigo", "headline": d["h1"], "description": d["description"], "inLanguage": "pt-BR",
               "datePublished": d["publicado"], "dateModified": data, "author": pessoa, "publisher": {"@id": ID_PESSOA},
               "mainEntityOfPage": f"{D.SITE}{url}", "image": f"{D.SITE}/og-image.jpg", "url": f"{D.SITE}{url}", "wordCount": palavras}
@@ -766,7 +767,7 @@ def pagina_artigo(a, artigos):
 def pagina_tratamentos():
     url = "/tratamentos/"
     title = "Tratamentos de Estética Facial em Goiânia | Elsângela Melo"
-    desc = "Conheça os 7 tratamentos de estética facial realizados por Elsângela Melo, biomédica esteta em Goiânia, e entenda como a avaliação define cada indicação."
+    desc = "Conheça os 8 tratamentos de estética facial realizados por Elsângela Melo, biomédica esteta em Goiânia, e entenda como a avaliação define cada indicação."
     _, faq, _ = fragmento("_faq-tratamentos.html")
     _, texto, _ = fragmento("_tratamentos-texto.html")
     partes = re.split(r"(?=<h2>Sobre valores</h2>)", texto)
@@ -780,16 +781,16 @@ def pagina_tratamentos():
   <div class="pag-heroi__texto" style="margin-top:1.5rem;max-width:62rem">
     <p class="rubrica">Tratamentos</p>
     <h1>Tratamentos de estética facial <em>em Goiânia</em></h1>
-    <p class="chamada">Sete recursos realizados por Elsângela Melo, biomédica esteta, na {D.CLINICA}. Cada um atende a um objetivo diferente, e a indicação sempre nasce de uma avaliação individual.</p>
+    <p class="chamada">Oito recursos realizados por Elsângela Melo, biomédica esteta, na {D.CLINICA}. Cada um atende a um objetivo diferente, e a indicação sempre nasce de uma avaliação individual.</p>
     <div class="acoes">{btn_wa("Agendar avaliação", "Olá! Acessei o site da Elsângela Melo e gostaria de informações sobre uma avaliação para entender qual tratamento é indicado para mim.", "tratamentos-heroi")}<a class="btn btn--fio" href="#avaliacao">Como funciona a avaliação</a></div>
   </div>
 </div></section>
-<section class="resposta"><div class="casco"><div class="resposta__texto"><p><strong>São sete os tratamentos de estética facial oferecidos por Elsângela Melo em Goiânia:</strong> harmonização facial, preenchimento labial, toxina botulínica, bioestimuladores de colágeno, skinbooster, peeling e microagulhamento.</p></div></div></section>
+<section class="resposta"><div class="casco"><div class="resposta__texto"><p><strong>São oito os tratamentos de estética facial oferecidos por Elsângela Melo em Goiânia:</strong> harmonização facial, preenchimento labial, toxina botulínica, bioestimuladores de colágeno, skinbooster, peeling, microagulhamento e limpeza de pele. A avaliação é gratuita.</p></div></div></section>
 <section class="sec"><div class="casco">
   <div class="prosa" style="margin-bottom:clamp(2.5rem,6vw,5rem)">
-    <p>A <strong>harmonização facial</strong> é um planejamento que pode combinar mais de um recurso. <strong>Preenchimento labial, toxina botulínica, bioestimuladores e skinbooster</strong> são injetáveis, com profundidades e propósitos distintos. <strong>Peeling e microagulhamento</strong> trabalham a textura, o tom e a resposta da própria pele. Conhecer a diferença ajuda a chegar à avaliação com perguntas melhores.</p>
+    <p>A <strong>harmonização facial</strong> é um planejamento que pode combinar mais de um recurso. <strong>Preenchimento labial, toxina botulínica, bioestimuladores e skinbooster</strong> são injetáveis, com profundidades e propósitos distintos. <strong>Peeling e microagulhamento</strong> trabalham a textura, o tom e a resposta da própria pele. A <strong>limpeza de pele</strong> cuida da remoção de impurezas e do excesso de oleosidade. Conhecer a diferença ajuda a chegar à avaliação com perguntas melhores.</p>
   </div>
-  <div class="cabeca revela"><p class="rubrica">Os sete recursos</p><h2>Escolha um tratamento <em>para entender melhor</em></h2></div>
+  <div class="cabeca revela"><p class="rubrica">Os oito recursos</p><h2>Escolha um tratamento <em>para entender melhor</em></h2></div>
   <div class="cartoes">{cartoes}</div>
 </div></section>
 <section class="sec sec--rosado"><div class="casco"><div class="prosa">{partes[0]}</div></div></section>
@@ -811,7 +812,7 @@ def pagina_tratamentos():
 def pagina_sobre():
     url = "/sobre/"
     title = "Sobre Elsângela Melo | Biomédica Esteta em Goiânia"
-    desc = "Elsângela Melo é biomédica esteta em Goiânia, CRBM 17215, e atua com estética facial na Mabelly Aesthetics, no Setor Coimbra. Conheça a forma de trabalhar."
+    desc = "Elsângela Melo é biomédica esteta em Goiânia, CRBM-3 17215, e atua com estética facial na MaBelly Aesthetics, no Setor Coimbra. Conheça a forma de trabalhar."
     mig = [("Início", "/"), ("Sobre", url)]
     principios = [
         ("Naturalidade como critério", "O objetivo não é transformar um rosto em outro. É trabalhar dentro da anatomia que já existe, respeitando volume, proporção e movimento."),
@@ -822,6 +823,7 @@ def pagina_sobre():
         ("Acompanhamento depois", "Orientações de cuidado e retorno para avaliar como o rosto respondeu fazem parte do mesmo processo."),
     ]
     lista_p = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in principios)
+    linha_numeros = "".join(f"<div><dt>{n['rotulo'].capitalize()}</dt><dd>{n['valor']}</dd></div>" for n in D.NUMEROS)
     bio = "".join(f"<p>{p}</p>" for p in D.BIOGRAFIA)
     formacao = ""
     if D.FORMACAO:
@@ -844,7 +846,7 @@ def pagina_sobre():
     <div class="pag-heroi__foto paralaxe">{foto_oculos("(min-width: 900px) 30vw, 90vw", lazy=False)}</div>
   </div>
 </div></section>
-<section class="resposta"><div class="casco"><div class="resposta__texto"><p><strong>Elsângela Melo é biomédica esteta, com registro {D.CRBM}, e atua com estética facial em Goiânia, Goiás.</strong> O atendimento é realizado na {D.CLINICA}, na {D.RUA}, {D.BAIRRO}.</p></div></div></section>
+<section class="resposta"><div class="casco"><div class="resposta__texto"><p><strong>Elsângela Melo é formada como biomédica esteta, com registro {D.CRBM} (Conselho Regional de Biomedicina da 3ª Região), e atua com estética facial em Goiânia, Goiás.</strong> O atendimento é realizado na {D.CLINICA}, na {D.RUA}, {D.BAIRRO}.</p></div></div></section>
 <section class="sec"><div class="casco"><div class="prosa">
   <h2>Apresentação</h2>
   <p>A prática de Elsângela Melo é dedicada à estética facial, um campo que exige duas coisas ao mesmo tempo: conhecimento técnico da anatomia e da fisiologia do rosto e uma leitura atenta de quem chega ao atendimento.</p>
@@ -862,8 +864,9 @@ def pagina_sobre():
   <dl class="tabela-dados">
     <div><dt>Nome</dt><dd>{D.NOME}</dd></div>
     <div><dt>Profissão</dt><dd>{D.PROFISSAO}</dd></div>
-    <div><dt>Registro</dt><dd>{D.CRBM}</dd></div>
+    <div><dt>Registro</dt><dd>{D.CRBM}, Conselho Regional de Biomedicina da 3ª Região</dd></div>
     <div><dt>Área de atuação</dt><dd>Estética facial</dd></div>
+    {linha_numeros}
     <div><dt>Local</dt><dd>{D.CLINICA}<br>{D.RUA} — {D.BAIRRO}<br>{D.CIDADE} - {D.UF}, {D.CEP}</dd></div>
     <div><dt>Contato</dt><dd><a href="{D.wa()}" rel="noopener">WhatsApp {D.TEL}</a><br><a href="mailto:{D.EMAIL}">{D.EMAIL}</a></dd></div>
     <div><dt>Horário</dt><dd>Segunda a sexta, das 9h às 19h<br>Sábado, das 9h às 14h</dd></div>
@@ -872,7 +875,7 @@ def pagina_sobre():
 <section class="sec sec--curta sec--branca fio-topo"><div class="casco">
   <div class="cabeca revela"><p class="rubrica">Continue conhecendo</p><h2>O trabalho em detalhe</h2></div>
   <div class="grade-liga grade-liga--3">
-    {ligacao("Tratamentos", "Todos os tratamentos", "Os sete recursos de estética facial e como a avaliação define cada indicação.", "/tratamentos/")}
+    {ligacao("Tratamentos", "Todos os tratamentos", "Os oito recursos de estética facial e como a avaliação define cada indicação.", "/tratamentos/")}
     {ligacao("Resultados", "O que esperar de um resultado", "Por que os resultados variam e como a expectativa é alinhada.", "/resultados/")}
     {ligacao("Blog", "Artigos sobre estética facial", "Leituras para decidir com informação, sem promessa de resultado.", "/blog/")}
   </div>
@@ -890,12 +893,8 @@ def pagina_sobre():
 def pagina_resultados():
     url = "/resultados/"
     title = "Resultados em estética facial: o que esperar | Elsângela Melo"
-    desc = "Por que os resultados em estética facial variam de pessoa para pessoa, como a expectativa é alinhada na avaliação e como os registros de pacientes são tratados."
+    desc = "Por que os resultados em estética facial variam de pessoa para pessoa, como a expectativa é alinhada na avaliação e onde ver os registros no Instagram."
     mig = [("Início", "/"), ("Resultados", url)]
-    galeria = ""
-    if D.RESULTADOS:
-        itens = "".join(f"""<figure><div class="galeria__par"><img src="{r['antes']}" alt="Antes: {esc(r['tratamento'])}, {esc(r['regiao'])}" loading="lazy"><img src="{r['depois']}" alt="Depois: {esc(r['tratamento'])}, {esc(r['regiao'])}" loading="lazy"></div><figcaption>{r['tratamento']} · {r['regiao']} · intervalo: {r['intervalo']}</figcaption></figure>""" for r in D.RESULTADOS)
-        galeria = f'<section class="sec sec--rosado"><div class="casco"><div class="cabeca revela"><p class="rubrica">Galeria</p><h2>Registros autorizados</h2></div><div class="galeria">{itens}</div></div></section>'
     fatores = [
         ("Características individuais e anatomia", "Estrutura óssea, distribuição dos compartimentos de gordura, espessura e elasticidade da pele, força e padrão da musculatura da mímica e simetria de base mudam de rosto para rosto. Definem o que é possível, o que é indicado e o que seria excessivo."),
         ("Resposta biológica", "A velocidade de metabolização de um produto, a resposta do tecido, a intensidade do edema nos primeiros dias e o tempo até a estabilização variam com idade, genética, hábitos, sono, exposição solar, tabagismo e condições de saúde."),
@@ -910,7 +909,7 @@ def pagina_resultados():
     <p class="rubrica">Resultados</p>
     <h1>O que esperar <em>de um resultado</em></h1>
     <p class="chamada">Duas pessoas podem receber a mesma técnica, na mesma região, com o mesmo produto, e chegar a desfechos diferentes. Entender de onde vem essa variação ajuda a formar uma expectativa realista antes de qualquer decisão.</p>
-    <div class="acoes">{btn_wa("Agendar avaliação", D.WA_PADRAO, "resultados-heroi")}<a class="btn btn--fio" href="/tratamentos/">Ver tratamentos</a></div>
+    <div class="acoes"><a class="btn" data-origem="resultados-heroi" href="{D.INSTAGRAM}" rel="noopener">Ver resultados no Instagram</a>{btn_wa("Agendar avaliação gratuita", D.WA_PADRAO, "resultados-heroi", "btn btn--fio")}</div>
   </div>
 </div></section>
 <section class="resposta"><div class="casco"><div class="resposta__texto"><p><strong>Os resultados em estética facial variam de acordo com as características individuais, a avaliação e a resposta de cada pessoa.</strong> Nenhum registro de outra pessoa deve ser lido como previsão do seu resultado.</p></div></div></section>
@@ -918,13 +917,13 @@ def pagina_resultados():
   <div class="duas-colunas__fixa cabeca" style="margin:0"><p class="rubrica">O que influencia</p><h2>Por que os resultados <em>variam</em></h2></div>
   <ul class="lista-fio" data-cascata>{lista_f}</ul>
 </div></section>
-{galeria}
 <section class="sec sec--rosado"><div class="casco duas-colunas">
-  <div class="duas-colunas__fixa cabeca" style="margin:0"><p class="rubrica">Privacidade e imagem</p><h2>Como as imagens de pacientes são tratadas</h2></div>
+  <div class="duas-colunas__fixa cabeca" style="margin:0"><p class="rubrica">Registros do trabalho</p><h2>Os resultados ficam <em>no Instagram</em></h2></div>
   <div class="prosa">
-    <p>Nenhuma imagem de paciente aparece neste site sem autorização expressa e por escrito da própria pessoa, específica para cada publicação e revogável a qualquer momento.</p>
-    <p>Este site também não usa imagem de banco nem fotos genéricas como se fossem resultados. As ilustrações em traço fino servem apenas para indicar regiões do rosto de forma educativa.</p>
-    <p>Para acompanhar o trabalho, siga <a href="{D.INSTAGRAM}" rel="noopener">{D.INSTAGRAM_H}</a> no Instagram ou leia os <a href="/blog/">artigos do blog</a>.</p>
+    <p>Este site não publica fotos de antes e depois. Para ver registros do trabalho, acesse <a href="{D.INSTAGRAM}" rel="noopener" data-origem="resultados-texto">{D.INSTAGRAM_H}</a> no Instagram.</p>
+    <p>Cada registro mostra o que aconteceu com uma pessoa específica, com um plano feito para ela. Por isso, não deve ser lido como previsão do seu resultado.</p>
+    <p>As ilustrações em traço fino deste site servem apenas para indicar regiões do rosto de forma educativa. Para saber mais sobre cada técnica, leia os <a href="/blog/">artigos do blog</a>.</p>
+    <p><a class="btn" data-origem="resultados-secao" href="{D.INSTAGRAM}" rel="noopener">Ver resultados no Instagram</a></p>
   </div>
 </div></section>
 <section class="sec sec--curta"><div class="casco">
@@ -951,7 +950,7 @@ def pagina_contato():
   <div class="pag-heroi__texto" style="margin-top:1.5rem;max-width:62rem">
     <p class="rubrica">Contato</p>
     <h1>Contato e agendamento <em>em Goiânia</em></h1>
-    <p class="chamada">O agendamento é feito pelo WhatsApp. Você pode escrever direto ou preencher o formulário desta página, que abre a conversa com a mensagem pronta.</p>
+    <p class="chamada">A avaliação é gratuita, e o agendamento é feito pelo WhatsApp. Você pode escrever direto ou preencher o formulário desta página, que abre a conversa com a mensagem pronta.</p>
     <div class="acoes">{btn_wa("Falar no WhatsApp", D.WA_PADRAO, "contato-heroi")}<a class="btn btn--fio" href="#formulario">Preencher o formulário</a></div>
   </div>
 </div></section>
@@ -1000,7 +999,7 @@ def pagina_agendamento():
   <div class="pag-heroi__texto" style="margin-top:1.5rem;max-width:58rem">
     <p class="rubrica">Agendamento</p>
     <h1>Solicitar <em>avaliação</em></h1>
-    <p class="chamada">Conte o seu interesse e a sua preferência de data. A mensagem abre no WhatsApp, e o horário é confirmado por lá conforme a agenda.</p>
+    <p class="chamada">A avaliação é gratuita. Conte o seu interesse e a sua preferência de data: a mensagem abre no WhatsApp, e o horário é confirmado por lá conforme a agenda.</p>
   </div>
 </div></section>
 {secao_form(titulo="Sua preferência <em>de atendimento</em>", texto="Atendimento na " + D.CLINICA + ", " + D.BAIRRO + ", em Goiânia. " + D.HORARIO_LONGO, agendamento=True, ancora="formulario")}
@@ -1091,7 +1090,7 @@ def pagina_links():
   <ul class="links__lista">
     {item("WhatsApp", D.TEL, "/whatsapp", "whatsapp", forte=True, alvo=True)}
     {item("Solicitar avaliação", "Escolha o tratamento e a sua preferência", "/agendamento/", "agendamento")}
-    {item("Instagram", D.INSTAGRAM_H, "/instagram", "instagram", alvo=True)}
+    {item("Instagram e resultados", D.INSTAGRAM_H, "/instagram", "instagram", alvo=True)}
     {item("Site oficial", "Tratamentos, artigos e contato", "/", "site")}
     {item("Como chegar", f"{D.RUA}, {D.BAIRRO}", D.MAPS, "mapa", alvo=True)}
     {item("Ligar", D.TEL, f"tel:{D.TEL_E164}", "telefone")}
@@ -1115,7 +1114,7 @@ def pagina_404():
 <section class="sec sec--curta sec--branca fio-topo"><div class="casco">
   <div class="cabeca"><h2>Talvez você estivesse procurando</h2></div>
   <div class="grade-liga grade-liga--3">
-    {ligacao("Tratamentos", "Todos os tratamentos", "Os sete recursos de estética facial.", "/tratamentos/")}
+    {ligacao("Tratamentos", "Todos os tratamentos", "Os oito recursos de estética facial.", "/tratamentos/")}
     {ligacao("Profissional", "Sobre Elsângela Melo", "Registro, atuação e forma de trabalhar.", "/sobre/")}
     {ligacao("Contato", "Contato e agendamento", "WhatsApp, endereço e horários.", "/contato/")}
   </div>

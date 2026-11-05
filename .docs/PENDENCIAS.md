@@ -6,25 +6,23 @@ Como publicar um dado confirmado: preencher `.build/dados.py`, rodar `python3 .b
 
 ## 1. Dados para confirmar ou enviar
 
+**Já confirmados e publicados (5 de novembro de 2026):** CRBM da 3ª Região; formada como biomédica esteta; grafia MaBelly; avaliação gratuita; limpeza de pele como oitavo tratamento; resultados direcionados ao Instagram, sem galeria no site; "+500 pacientes atendidas".
+
 | # | O que preciso | Situação no site |
 |---|---|---|
-| 1 | Graduação, pós-graduação, especializações, cursos e certificações, com curso, instituição e ano | Seção oculta |
-| 2 | Biografia real: início na estética, motivação, trajetória e locais de atuação | Seção oculta |
-| 3 | Confirmar o registro CRBM 17215 e a região do conselho | Publicado como já estava, sem a região |
-| 4 | Comprovar "+500 pacientes", "6 anos de experiência" e "nota 5.0" | Removidos até haver confirmação |
+| 1 | **O número é +500 ou +5.000 pacientes?** A resposta dizia "mais de 5000", mas o site antigo dizia "+500" | Publicado "+500", que é verdadeiro nos dois casos |
+| 2 | "6 anos de experiência" e "nota 5.0" também são verdadeiros? | Fora do site até haver um sim específico |
+| 3 | Curso, instituição e ano da formação; pós-graduações, cursos e certificações | Site diz só "formada como biomédica esteta". A lista detalhada fica oculta |
+| 4 | Biografia real: início na estética, motivação, trajetória e locais de atuação | Seção oculta |
 | 5 | Fotos profissionais originais, em alta resolução, e fotos da clínica | Usando as fotos atuais, de baixa resolução (682 a 959 px de largura) |
 | 6 | Depoimentos reais com autorização: texto, primeiro nome e procedimento | Seção oculta |
-| 7 | Fotos de antes e depois com autorização por escrito | Galeria oculta. Ver item 9 |
-| 8 | Grafia oficial da clínica: "Mabelly" (site) ou "MaBelly" (Google Maps) | Site usa "Mabelly"; a outra grafia está só nos dados estruturados |
-| 9 | Regra do Conselho de Biomedicina sobre antes e depois | Não encontrei a regra em fonte confiável. Confirmar antes de publicar qualquer imagem |
-| 10 | Razão social e CNPJ do controlador dos dados, para a política de privacidade | Linha oculta até ser informada |
-| 11 | "Limpeza de pele" é um serviço oferecido? | Removido de `/agendamento/`, pois não está entre os 7 tratamentos |
-| 12 | A avaliação é paga ou gratuita? | O site não diz |
-| 13 | O telefone do perfil no Google é o mesmo (62) 98202-2330? | A conferir no perfil |
+| 7 | CNPJ e razão social, quando existirem | Ainda não há CNPJ. A política identifica a profissional pelo nome |
+| 8 | O telefone do perfil no Google é o mesmo (62) 98202-2330? | A conferir no perfil |
+| 9 | O Conselho de Biomedicina tem regra sobre divulgar avaliação gratuita e resultados no Instagram? | Não encontrei a regra em fonte confiável. Vale confirmar com o conselho |
 
 ## 2. Revisão clínica obrigatória
 
-Os 7 textos de tratamento e os 5 artigos não têm registro de revisão da profissional. A frase "Revisado por Elsângela Melo" foi retirada. Depois da leitura e da aprovação, basta marcar `CONTEUDO_REVISADO = True` em `.build/dados.py`, e a menção volta nas páginas e nos dados estruturados.
+Os 8 textos de tratamento e os 5 artigos não têm registro de revisão da profissional. **A página de limpeza de pele foi escrita agora**, com conteúdo geral, e precisa de atenção especial: confirme as etapas, as contraindicações e os cuidados. A frase "Revisado por Elsângela Melo" foi retirada. Depois da leitura e da aprovação, basta marcar `CONTEUDO_REVISADO = True` em `.build/dados.py`, e a menção volta nas páginas e nos dados estruturados.
 
 ### Mudanças feitas nesta revisão que precisam do seu aval
 
@@ -60,7 +58,8 @@ As contradições abaixo foram retiradas do site com um texto neutro, sem invent
 | Harmonização facial | Atuação em lábios e nariz; encaminhamento a outros profissionais quando necessário |
 | Artigo "Como escolher" | Embalagem lacrada e lote registrado no prontuário; orientações por escrito; contato fora do horário |
 | Política de privacidade | Acesso ao WhatsApp restrito a quem cuida do agendamento |
-| Resultados | Nenhuma imagem de paciente sem autorização escrita, específica e revogável |
+| Resultados | Registros do trabalho publicados no Instagram @elsangelamelo |
+| Limpeza de pele | Etapas: higienização, preparo, extração e finalização com produtos calmantes e protetor solar |
 
 ## 3. Decisões e acessos
 

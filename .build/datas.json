@@ -1,6 +1,6 @@
 {
  "/": {
-  "assinatura": "9cf68d6709",
+  "assinatura": "34180b47ef",
   "data": "2026-11-05"
  },
  "/bioestimuladores/": {
@@ -8,7 +8,7 @@
   "data": "2026-11-05"
  },
  "/blog/": {
-  "assinatura": "21cfede5dd",
+  "assinatura": "86767a9e21",
   "data": "2026-11-05"
  },
  "/blog/botox-e-preenchimento-sao-a-mesma-coisa/": {
@@ -16,7 +16,7 @@
   "data": "2026-11-05"
  },
  "/blog/como-escolher-profissional-estetica-facial/": {
-  "assinatura": "48aae2729344136fa355",
+  "assinatura": "efdc96e46944136fa355",
   "data": "2026-11-05"
  },
  "/blog/cuidados-apos-preenchimento-labial/": {
@@ -32,11 +32,15 @@
   "data": "2026-11-05"
  },
  "/contato/": {
-  "assinatura": "85f8320b85",
+  "assinatura": "ddb3df3b8e",
   "data": "2026-11-05"
  },
  "/harmonizacao-facial/": {
   "assinatura": "983e84d590a5aba4c5d8",
+  "data": "2026-11-05"
+ },
+ "/limpeza-de-pele/": {
+  "assinatura": "413b0fe6a15c6f7da28d",
   "data": "2026-11-05"
  },
  "/microagulhamento/": {
@@ -44,19 +48,19 @@
   "data": "2026-11-05"
  },
  "/peeling/": {
-  "assinatura": "acea79d49993ab2625a1",
+  "assinatura": "acea79d499a376214764",
   "data": "2026-11-05"
  },
  "/politica-de-privacidade/": {
-  "assinatura": "5f32e821b8",
+  "assinatura": "cb39d99204",
   "data": "2026-11-05"
  },
  "/preenchimento-labial/": {
-  "assinatura": "38e96dc929e8a3972489",
+  "assinatura": "8dbd0c4808e8a3972489",
   "data": "2026-11-05"
  },
  "/resultados/": {
-  "assinatura": "924ac6a429",
+  "assinatura": "97fbf3d818",
   "data": "2026-11-05"
  },
  "/skinbooster/": {
@@ -64,15 +68,15 @@
   "data": "2026-11-05"
  },
  "/sobre/": {
-  "assinatura": "a93b5cee38",
+  "assinatura": "c8ead3c78c",
   "data": "2026-11-05"
  },
  "/toxina-botulinica/": {
-  "assinatura": "68a32420a21dc07910ec",
+  "assinatura": "710b51d08f1dc07910ec",
   "data": "2026-11-05"
  },
  "/tratamentos/": {
-  "assinatura": "86c232d051",
+  "assinatura": "0aaec52809",
   "data": "2026-11-05"
  }
 }

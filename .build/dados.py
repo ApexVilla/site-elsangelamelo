@@ -10,10 +10,10 @@ SITE = "https://elsangelamelo.com"
 
 NOME = "Elsângela Melo"
 PROFISSAO = "Biomédica Esteta"
-CRBM = "CRBM 17215"
-CLINICA = "Mabelly Aesthetics"
-# Como o perfil aparece no Google Maps, e a variação vista no Search Console.
-CLINICA_VARIACOES = ["MaBelly Aesthetics", "Ma Belly Aesthetics"]
+CRBM = "CRBM-3 17215"  # Conselho Regional de Biomedicina da 3ª Região, confirmado por Samir em 2026-11-05
+CLINICA = "MaBelly Aesthetics"  # grafia confirmada por Samir em 2026-11-05
+# Variações vistas no Google Maps e no Search Console, só nos dados estruturados.
+CLINICA_VARIACOES = ["Mabelly Aesthetics", "Ma Belly Aesthetics"]
 # Variações de grafia do nome. "elisangela melo" já aparece no Search Console.
 NOME_VARIACOES = ["Elisângela Melo", "Elsangela Melo"]
 
@@ -48,8 +48,8 @@ GA4_ID = ""
 # ─── Aguardando confirmação da profissional (vazio = fora do site) ───────────
 # Marcar True só depois de a profissional ter lido e aprovado os textos clínicos.
 CONTEUDO_REVISADO = False
-# Ex.: [{"valor": "+500", "rotulo": "pacientes atendidas"}]
-NUMEROS = []
+# "+500" confirmado por Samir em 2026-11-05 (a mensagem dizia "mais de 5000"; confirmar o número exato).
+NUMEROS = [{"valor": "+500", "rotulo": "pacientes atendidas"}]
 # Ex.: {"tipo": "Graduação", "curso": "...", "instituicao": "...", "ano": "..."}
 FORMACAO = []
 # Ex.: {"ano": "...", "titulo": "...", "texto": "..."}
@@ -58,10 +58,8 @@ TRAJETORIA = []
 BIOGRAFIA = []
 # Ex.: {"texto": "...", "nome": "primeiro nome", "tratamento": "..."}
 DEPOIMENTOS = []
-# Só com autorização por escrito e depois de confirmar as regras do conselho.
-# Ex.: {"antes": "/assets/img/...", "depois": "...", "tratamento": "...", "regiao": "...", "intervalo": "..."}
-RESULTADOS = []
-# Dados do controlador para a política de privacidade.
+# Resultados: decisão de Samir (2026-11-05): sem galeria no site, direciona para o Instagram.
+# Dados do controlador para a política de privacidade. Ainda não há CNPJ (2026-11-05).
 CONTROLADOR = {"razao_social": "", "cnpj": ""}
 
 TRATAMENTOS = [
@@ -116,7 +114,7 @@ TRATAMENTOS = [
         "resumo": "Renovação controlada das camadas superficiais da pele, com o tipo definido na avaliação.",
         "considerar": "textura irregular, manchas superficiais e aspecto opaco",
         "familia": "superfície",
-        "rel": ["microagulhamento", "skinbooster", "bioestimuladores"],
+        "rel": ["microagulhamento", "skinbooster", "limpeza-de-pele"],
         "artigos": ["como-escolher-profissional-estetica-facial"],
     },
     {
@@ -127,6 +125,15 @@ TRATAMENTOS = [
         "familia": "superfície",
         "description": "Microagulhamento em Goiânia: como as microlesões controladas estimulam o reparo da pele, para quem pode ser indicado, cuidados e recuperação.",
         "rel": ["peeling", "skinbooster", "bioestimuladores"],
+        "artigos": ["como-escolher-profissional-estetica-facial"],
+    },
+    {
+        "slug": "limpeza-de-pele", "nome": "Limpeza de Pele", "minusculo": "limpeza de pele",
+        "title": "Limpeza de Pele em Goiânia | Elsângela Melo",
+        "resumo": "Higienização profunda e remoção de impurezas, com etapas definidas conforme o tipo de pele.",
+        "considerar": "cravos, excesso de oleosidade e aspecto opaco da pele",
+        "familia": "superfície",
+        "rel": ["peeling", "microagulhamento", "skinbooster"],
         "artigos": ["como-escolher-profissional-estetica-facial"],
     },
 ]

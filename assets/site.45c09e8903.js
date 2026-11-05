@@ -271,7 +271,7 @@ if (!botao) return;
 botao.addEventListener('click', function () {
 var quadro = doc.createElement('iframe');
 quadro.src = caixa.dataset.mapaGoogle;
-quadro.title = 'Mapa com a localização da Mabelly Aesthetics, no Setor Coimbra, em Goiânia';
+quadro.title = 'Mapa com a localização da MaBelly Aesthetics, no Setor Coimbra, em Goiânia';
 quadro.loading = 'lazy';
 quadro.referrerPolicy = 'strict-origin-when-cross-origin';
 caixa.textContent = '';

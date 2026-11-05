@@ -2,6 +2,8 @@
 
 Data: 5 de novembro de 2026. Estado: **publicado em 5 de novembro de 2026.**
 
+> **Atualização de 5 de novembro de 2026, depois da publicação:** entraram os dados confirmados por Samir: CRBM da 3ª Região, formação, grafia MaBelly, avaliação gratuita, "+500 pacientes" e limpeza de pele como oitavo tratamento, com página própria. Os resultados agora direcionam ao Instagram, sem galeria no site. As seções abaixo descrevem a reestruturação inicial; as medições da seção G são anteriores a estes ajustes.
+
 ## A. Diagnóstico inicial
 
 **Críticos, no ar antes desta reestruturação**
