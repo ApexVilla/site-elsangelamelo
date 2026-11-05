@@ -34,12 +34,16 @@ Os 7 textos de tratamento e os 5 artigos não têm registro de revisão da profi
 - **Preenchimento labial:** edema "mais evidente nas primeiras 48 horas" virou "nos primeiros dias", para não contradizer o artigo de cuidados. Também entrou uma pergunta sobre o que significa 0,5 ml ou 1 ml, sem indicar quantidade.
 - **Afirmações regulatórias sem fonte:** "privativos de profissionais de saúde" foi trocado por "devem ser realizados por profissional habilitado", e "restritos a maiores de 18 anos" foi retirado.
 
-### Contradições que só a profissional pode decidir
+### Prazos que precisam da sua definição
 
-- **Álcool antes do procedimento:** "24 horas anteriores" (toxina), "horas que antecedem" (bioestimuladores) ou "véspera" (artigo de cuidados)?
-- **Batom depois do preenchimento:** "primeiras horas" (página do tratamento) ou "primeiros dias" (artigo)?
-- **Peeling:** a descamação "de poucos dias a cerca de uma semana" vale também para os peelings médio e profundo citados?
-- **Microagulhamento e toxina:** as contraindicações não citam distúrbios de coagulação, ao contrário de outras páginas. Deveriam citar?
+As contradições abaixo foram retiradas do site com um texto neutro, sem inventar número. Se preferir publicar prazos, informe quais valem.
+
+- **Álcool antes do procedimento:** as páginas diziam "24 horas", "horas anteriores" ou "véspera". Agora dizem "antes da sessão, conforme a orientação recebida".
+- **Álcool depois do preenchimento:** a página do tratamento diz "primeiras 24 horas", e o artigo diz "24 a 48 horas". Qual vale?
+- **Maquiagem labial:** a página dizia "primeiras horas", e o artigo, "primeiros dias". Agora a página diz "até a liberação da profissional".
+- **Peeling:** o prazo de "poucos dias a cerca de uma semana" foi trocado por "varia conforme o tipo e a intensidade", porque não cobria todos os tipos citados.
+- **Linhas em repouso:** o artigo sobre botox dizia que "o componente é estrutural". Agora diz que "pode haver também um componente estrutural".
+- **Coagulação:** entrou em "Quando pode não ser indicado" em toxina botulínica e microagulhamento, como nas outras páginas. Confirme se está de acordo.
 - **Durações e intervalos:** nenhuma página de tratamento informa números. Deseja publicar faixas?
 
 ### Práticas descritas que precisam ser verdadeiras
